@@ -1,0 +1,9 @@
+# Ignorar documentações internas e briefing
+docs/
+
+# Sistema e editores
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/

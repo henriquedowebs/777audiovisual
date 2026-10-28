@@ -1,0 +1,419 @@
+/* 777 Audiovisual — Custom Styles & Tokens (Apex Squad) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&family=Space+Grotesk:wght@600;700&display=swap');
+
+:root {
+  --color-bg-base: #000000;
+  --color-bg-surface: #0B0B0B;
+  --color-bg-card: rgba(26, 26, 26, 0.90);
+  --color-brand-crimson: #BF0608;
+  --color-brand-crimson-hover: #e00b0e;
+  --color-brand-burgundy: #5A0507;
+  --color-brand-burgundy-dark: #3A0204;
+  --color-brand-cream: #F2F0E9;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: rgba(255, 255, 255, 0.70);
+  --color-text-muted: #757575;
+  --color-border-subtle: rgba(255, 255, 255, 0.10);
+  --color-border-active: rgba(255, 255, 255, 0.30);
+  
+  --font-display: 'Syne', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring-snappy: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--color-bg-base);
+}
+
+/* Tipografia */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* ========================================================================= */
+/* MOTION & REVEAL ON SCROLL                                                 */
+/* ========================================================================= */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease-spring), transform 0.7s var(--ease-spring);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay helpers */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* ========================================================================= */
+/* CARROSSEL INFINITO DE MARCAS (MARQUEE)                                    */
+/* ========================================================================= */
+.marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+  will-change: transform;
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 32px;
+  flex-shrink: 0;
+  height: 60px;
+  filter: grayscale(100%) brightness(180%);
+  opacity: 0.65;
+  transition: all 0.3s var(--ease-spring);
+}
+
+.marquee-item:hover {
+  filter: grayscale(0%) brightness(100%);
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+/* ========================================================================= */
+/* BOTÕES & CTAS                                                             */
+/* ========================================================================= */
+.btn-primary-crimson {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-brand-crimson);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  padding: 16px 36px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.25s var(--ease-spring);
+  box-shadow: 0 4px 20px rgba(191, 6, 8, 0.35);
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-primary-crimson:hover {
+  background-color: var(--color-brand-crimson-hover);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(191, 6, 8, 0.55);
+}
+
+.btn-primary-crimson:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 16px 32px;
+  border-radius: 9999px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.25s var(--ease-spring);
+  backdrop-filter: blur(8px);
+}
+
+.btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-saber-mais {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.25s var(--ease-spring);
+  align-self: flex-start;
+}
+
+.btn-saber-mais:hover {
+  background: var(--color-brand-crimson);
+  border-color: var(--color-brand-crimson);
+  transform: translateX(4px);
+  box-shadow: 0 4px 15px rgba(191, 6, 8, 0.4);
+}
+
+/* ========================================================================= */
+/* PILL BADGES                                                               */
+/* ========================================================================= */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 9999px;
+}
+
+.pill-badge-cream {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(242, 240, 233, 0.15);
+  border: 1px solid rgba(242, 240, 233, 0.3);
+  color: var(--color-brand-cream);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 9999px;
+}
+
+.pill-guarantee {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(6px);
+  transition: all 0.25s var(--ease-spring);
+}
+
+.pill-guarantee:hover {
+  background: rgba(0, 0, 0, 0.55);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ========================================================================= */
+/* GRID 3x2 SIMÉTRICO DOS SERVIÇOS                                           */
+/* ========================================================================= */
+.service-card {
+  transition: all 0.35s var(--ease-spring);
+  background: rgba(18, 18, 18, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 1.25rem; /* 20px */
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(191, 6, 8, 0.15);
+}
+
+.service-card:hover .service-bg-img {
+  transform: scale(1.08);
+  opacity: 0.32;
+}
+
+.service-bg-img {
+  transition: transform 0.8s var(--ease-spring), opacity 0.5s ease;
+}
+
+/* ========================================================================= */
+/* CASES CARDS                                                               */
+/* ========================================================================= */
+.case-card {
+  transition: all 0.35s var(--ease-spring);
+  background: #0B0B0B;
+}
+
+.case-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+.play-btn-pulse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(191, 6, 8, 0.85);
+  backdrop-filter: blur(6px);
+  color: #FFFFFF;
+  font-size: 1.25rem;
+  box-shadow: 0 0 25px rgba(191, 6, 8, 0.6);
+  transition: all 0.3s var(--ease-spring-snappy);
+}
+
+.case-card:hover .play-btn-pulse {
+  transform: scale(1.15);
+  background: var(--color-brand-crimson);
+  box-shadow: 0 0 35px rgba(191, 6, 8, 0.85);
+}
+
+/* ========================================================================= */
+/* SOBRE A EMPRESA (2 COLUNAS)                                               */
+/* ========================================================================= */
+.sobre-photo-container {
+  position: relative;
+  border-radius: 1.75rem;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.sobre-photo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sobre-floating-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: rgba(11, 11, 11, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================================================= */
+/* FAQ ACCORDION                                                             */
+/* ========================================================================= */
+details.faq-item {
+  transition: all 0.25s var(--ease-spring);
+}
+
+details.faq-item[open] {
+  background: rgba(26, 26, 26, 0.9);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Carrossel Scrollbar escondida */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ========================================================================= */
+/* DRAWER / SHEET TRANSITIONS                                                */
+/* ========================================================================= */
+#case-drawer-backdrop {
+  transition: opacity 0.35s var(--ease-spring);
+}
+
+#case-drawer-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#case-drawer-panel {
+  transition: transform 0.4s var(--ease-spring);
+}
+
+#case-drawer-backdrop.active #case-drawer-panel {
+  transform: translateX(0);
+}
+
+/* ========================================================================= */
+/* REDUCED MOTION GATE                                                       */
+/* ========================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .marquee-track {
+    animation: none !important;
+    overflow-x: auto;
+  }
+}
