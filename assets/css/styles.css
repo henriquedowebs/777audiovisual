@@ -1,23 +1,34 @@
 /* 777 Audiovisual — Custom Styles & Tokens (Apex Squad) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&family=Space+Grotesk:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --color-bg-base: #000000;
-  --color-bg-surface: #0B0B0B;
-  --color-bg-card: rgba(26, 26, 26, 0.90);
-  --color-brand-crimson: #BF0608;
-  --color-brand-crimson-hover: #e00b0e;
-  --color-brand-burgundy: #5A0507;
-  --color-brand-burgundy-dark: #3A0204;
-  --color-brand-cream: #F2F0E9;
-  --color-text-primary: #FFFFFF;
-  --color-text-secondary: rgba(255, 255, 255, 0.70);
-  --color-text-muted: #757575;
-  --color-border-subtle: rgba(255, 255, 255, 0.10);
-  --color-border-active: rgba(255, 255, 255, 0.30);
+  /* Paleta Oficial da Identidade Visual */
+  --color-brand-red: #85000d;
+  --color-brand-red-hover: #a30010;
+  --color-brand-red-dark: #4d0007;
+  --color-brand-red-glow: rgba(133, 0, 13, 0.45);
   
-  --font-display: 'Syne', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --color-brand-cream: #d6c7ab;
+  --color-brand-cream-light: #f5efe6;
+  --color-brand-cream-muted: rgba(214, 199, 171, 0.75);
+  --color-brand-cream-subtle: rgba(214, 199, 171, 0.15);
+  
+  --color-bg-base: #000000;
+  --color-bg-surface: #0a0102;
+  --color-bg-surface-elevated: #150204;
+  --color-bg-card: rgba(18, 4, 6, 0.90);
+  
+  --color-text-primary: #FFFFFF;
+  --color-text-cream: #d6c7ab;
+  --color-text-secondary: rgba(214, 199, 171, 0.85);
+  --color-text-muted: #8a7e6b;
+  
+  --color-border-subtle: rgba(214, 199, 171, 0.15);
+  --color-border-active: rgba(214, 199, 171, 0.40);
+  
+  /* Tipografia: Agrandir com fallbacks editoriais geométricos */
+  --font-display: 'Agrandir', 'Agrandir Grand', 'Agrandir Wide', 'Syne', 'Space Grotesk', -apple-system, sans-serif;
+  --font-body: 'Agrandir', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   
   --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring-snappy: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -43,6 +54,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   background-color: var(--color-bg-base);
+  color: var(--color-text-cream);
 }
 
 /* Tipografia */
@@ -69,7 +81,6 @@ body {
   transform: translateY(0);
 }
 
-/* Stagger delay helpers */
 .delay-100 { transition-delay: 100ms; }
 .delay-200 { transition-delay: 200ms; }
 .delay-300 { transition-delay: 300ms; }
@@ -113,45 +124,48 @@ body {
   padding: 0 32px;
   flex-shrink: 0;
   height: 60px;
-  filter: grayscale(100%) brightness(180%);
+  filter: grayscale(100%) sepia(30%) brightness(140%);
   opacity: 0.65;
   transition: all 0.3s var(--ease-spring);
 }
 
 .marquee-item:hover {
-  filter: grayscale(0%) brightness(100%);
+  filter: grayscale(0%) sepia(0%) brightness(100%);
   opacity: 1;
   transform: scale(1.12);
 }
 
 /* ========================================================================= */
-/* BOTÕES & CTAS                                                             */
+/* BOTÕES & CTAS (Vermelho Bordô #85000d & Creme #d6c7ab)                    */
 /* ========================================================================= */
-.btn-primary-crimson {
+.btn-primary-bordeaux {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-brand-crimson);
-  color: #FFFFFF;
+  background-color: var(--color-brand-red);
+  color: var(--color-brand-cream);
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.95rem;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   padding: 16px 36px;
   border-radius: 9999px;
   text-decoration: none;
   transition: all 0.25s var(--ease-spring);
-  box-shadow: 0 4px 20px rgba(191, 6, 8, 0.35);
+  box-shadow: 0 4px 20px var(--color-brand-red-glow);
   cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(214, 199, 171, 0.35);
 }
 
-.btn-primary-crimson:hover {
-  background-color: var(--color-brand-crimson-hover);
+.btn-primary-bordeaux:hover {
+  background-color: var(--color-brand-red-hover);
+  color: #FFFFFF;
+  border-color: var(--color-brand-cream);
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 30px rgba(191, 6, 8, 0.55);
+  box-shadow: 0 8px 30px rgba(133, 0, 13, 0.65), 0 0 15px rgba(214, 199, 171, 0.3);
 }
 
-.btn-primary-crimson:active {
+.btn-primary-bordeaux:active {
   transform: translateY(0) scale(0.98);
 }
 
@@ -159,21 +173,24 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.05);
-  color: #FFFFFF;
-  font-weight: 500;
+  background-color: rgba(214, 199, 171, 0.05);
+  color: var(--color-brand-cream);
+  font-family: var(--font-display);
+  font-weight: 600;
   font-size: 0.95rem;
+  letter-spacing: 0.03em;
   padding: 16px 32px;
   border-radius: 9999px;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(214, 199, 171, 0.3);
   transition: all 0.25s var(--ease-spring);
   backdrop-filter: blur(8px);
 }
 
 .btn-ghost:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(214, 199, 171, 0.15);
+  border-color: var(--color-brand-cream);
+  color: #FFFFFF;
   transform: translateY(-2px);
 }
 
@@ -182,12 +199,13 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #FFFFFF;
+  background: rgba(214, 199, 171, 0.08);
+  border: 1px solid rgba(214, 199, 171, 0.25);
+  color: var(--color-brand-cream);
+  font-family: var(--font-display);
   font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   padding: 12px 24px;
   border-radius: 9999px;
   text-decoration: none;
@@ -196,10 +214,11 @@ body {
 }
 
 .btn-saber-mais:hover {
-  background: var(--color-brand-crimson);
-  border-color: var(--color-brand-crimson);
+  background: var(--color-brand-red);
+  border-color: var(--color-brand-cream);
+  color: #FFFFFF;
   transform: translateX(4px);
-  box-shadow: 0 4px 15px rgba(191, 6, 8, 0.4);
+  box-shadow: 0 4px 18px var(--color-brand-red-glow);
 }
 
 /* ========================================================================= */
@@ -209,13 +228,13 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(133, 0, 13, 0.35);
+  border: 1px solid rgba(214, 199, 171, 0.3);
   backdrop-filter: blur(8px);
-  color: #FFFFFF;
+  color: var(--color-brand-cream);
   font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 8px 18px;
   border-radius: 9999px;
@@ -225,36 +244,37 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(242, 240, 233, 0.15);
-  border: 1px solid rgba(242, 240, 233, 0.3);
+  background: rgba(214, 199, 171, 0.15);
+  border: 1px solid var(--color-brand-cream);
   color: var(--color-brand-cream);
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 8px 18px;
+  padding: 8px 20px;
   border-radius: 9999px;
 }
 
 .pill-guarantee {
-  background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(10, 1, 2, 0.65);
+  border: 1px solid rgba(214, 199, 171, 0.25);
   padding: 14px 18px;
-  border-radius: 12px;
+  border-radius: 14px;
   font-size: 0.85rem;
   font-weight: 500;
-  color: #FFFFFF;
+  color: var(--color-brand-cream);
   display: flex;
   align-items: center;
   gap: 10px;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
   transition: all 0.25s var(--ease-spring);
 }
 
 .pill-guarantee:hover {
-  background: rgba(0, 0, 0, 0.55);
-  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(10, 1, 2, 0.85);
+  border-color: var(--color-brand-cream);
   transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
 /* ========================================================================= */
@@ -262,14 +282,14 @@ body {
 /* ========================================================================= */
 .service-card {
   transition: all 0.35s var(--ease-spring);
-  background: rgba(18, 18, 18, 0.88);
+  background: rgba(15, 2, 4, 0.92);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(214, 199, 171, 0.14);
   height: 360px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 1.25rem; /* 20px */
+  border-radius: 1.25rem;
   padding: 2rem;
   position: relative;
   overflow: hidden;
@@ -277,8 +297,8 @@ body {
 
 .service-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(191, 6, 8, 0.15);
+  border-color: rgba(214, 199, 171, 0.45);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(133, 0, 13, 0.3);
 }
 
 .service-card:hover .service-bg-img {
@@ -295,13 +315,14 @@ body {
 /* ========================================================================= */
 .case-card {
   transition: all 0.35s var(--ease-spring);
-  background: #0B0B0B;
+  background: #0a0102;
+  border: 1px solid rgba(214, 199, 171, 0.15);
 }
 
 .case-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  border-color: var(--color-brand-cream);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85), 0 0 25px rgba(133, 0, 13, 0.35);
 }
 
 .play-btn-pulse {
@@ -311,18 +332,20 @@ body {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: rgba(191, 6, 8, 0.85);
+  background: rgba(133, 0, 13, 0.90);
+  border: 1px solid var(--color-brand-cream);
   backdrop-filter: blur(6px);
-  color: #FFFFFF;
+  color: var(--color-brand-cream);
   font-size: 1.25rem;
-  box-shadow: 0 0 25px rgba(191, 6, 8, 0.6);
+  box-shadow: 0 0 25px rgba(133, 0, 13, 0.7);
   transition: all 0.3s var(--ease-spring-snappy);
 }
 
 .case-card:hover .play-btn-pulse {
   transform: scale(1.15);
-  background: var(--color-brand-crimson);
-  box-shadow: 0 0 35px rgba(191, 6, 8, 0.85);
+  background: var(--color-brand-red);
+  color: #FFFFFF;
+  box-shadow: 0 0 35px rgba(133, 0, 13, 0.95), 0 0 15px rgba(214, 199, 171, 0.4);
 }
 
 /* ========================================================================= */
@@ -332,8 +355,8 @@ body {
   position: relative;
   border-radius: 1.75rem;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(214, 199, 171, 0.25);
 }
 
 .sobre-photo-container img {
@@ -348,12 +371,12 @@ body {
   bottom: 24px;
   left: 24px;
   right: 24px;
-  background: rgba(11, 11, 11, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(10, 1, 2, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(214, 199, 171, 0.3);
   border-radius: 16px;
   padding: 16px 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 /* ========================================================================= */
@@ -361,12 +384,14 @@ body {
 /* ========================================================================= */
 details.faq-item {
   transition: all 0.25s var(--ease-spring);
+  border: 1px solid rgba(214, 199, 171, 0.15);
+  background: rgba(15, 2, 4, 0.6);
 }
 
 details.faq-item[open] {
-  background: rgba(26, 26, 26, 0.9);
-  border-color: rgba(255, 255, 255, 0.22);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  background: rgba(22, 3, 6, 0.95);
+  border-color: var(--color-brand-cream);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 20px rgba(133, 0, 13, 0.2);
 }
 
 details summary::-webkit-details-marker {
@@ -396,6 +421,8 @@ details summary::-webkit-details-marker {
 
 #case-drawer-panel {
   transition: transform 0.4s var(--ease-spring);
+  background: #0d0103;
+  border-left: 1px solid rgba(214, 199, 171, 0.25);
 }
 
 #case-drawer-backdrop.active #case-drawer-panel {

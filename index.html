@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>777 Audiovisual — Produção Cinematográfica & Drone para Empresas em SP</title>
-  <meta name="description" content="Vídeos corporativos de alta fidelidade, captação aérea cinematográfica com drone e cobertura de feiras para marcas que exigem autoridade real em São Paulo.">
+  <title>777 Audiovisual — Fotografia e Vídeo Corporativo para Empresas em SP</title>
+  <meta name="description" content="Comunicamos o valor da sua empresa por meio de foto e vídeo. Captação aérea cinematográfica com drone homologado, institucional e feiras em São Paulo.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/img/logo-icone-creme-vermelho.jpeg">
   
   <!-- OpenGraph / Social -->
-  <meta property="og:title" content="777 Audiovisual — Produção Cinematográfica & Drone para Empresas em SP">
-  <meta property="og:description" content="Mais de 700 produções entregues e 5 milhões de pessoas impactadas. Captação com drone e vídeo corporativo em SP.">
+  <meta property="og:title" content="777 Audiovisual — Fotografia e Vídeo Corporativo para Empresas em SP">
+  <meta property="og:description" content="Comunicamos o valor da sua empresa por meio de foto e vídeo. Mais de 700 produções entregues e 5 milhões de pessoas impactadas.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://777audiovisual.com/">
   
@@ -20,19 +23,21 @@
         extend: {
           colors: {
             brand: {
-              crimson: '#BF0608',
-              'crimson-hover': '#e00b0e',
-              burgundy: '#5A0507',
-              'burgundy-dark': '#3A0204',
-              cream: '#F2F0E9',
+              red: '#85000d',
+              'red-hover': '#a30010',
+              'red-dark': '#4d0007',
+              cream: '#d6c7ab',
+              'cream-light': '#f5efe6',
+              'cream-muted': 'rgba(214, 199, 171, 0.75)',
               dark: '#000000',
-              surface: '#0B0B0B',
-              card: 'rgba(26, 26, 26, 0.90)'
+              surface: '#0a0102',
+              'surface-elevated': '#150204',
+              card: 'rgba(18, 4, 6, 0.90)'
             }
           },
           fontFamily: {
-            display: ['Syne', 'Space Grotesk', 'sans-serif'],
-            body: ['Inter', 'sans-serif']
+            display: ['Agrandir', 'Agrandir Grand', 'Agrandir Wide', 'Syne', 'Space Grotesk', 'sans-serif'],
+            body: ['Agrandir', 'Inter', 'sans-serif']
           }
         }
       }
@@ -42,25 +47,25 @@
   <!-- Custom Styles -->
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body class="bg-black text-white selection:bg-brand-crimson selection:text-white">
+<body class="bg-black text-brand-cream selection:bg-brand-red selection:text-brand-cream">
 
   <!-- ========================================================================= -->
   <!-- 0. HEADER FIXO                                                            -->
   <!-- ========================================================================= -->
-  <header class="fixed top-0 inset-x-0 z-40 transition-all duration-300 bg-black/40 backdrop-blur-md border-b border-white/10">
+  <header class="fixed top-0 inset-x-0 z-40 transition-all duration-300 bg-black/60 backdrop-blur-md border-b border-brand-cream/15">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <!-- Logo 777 Audiovisual -->
+      <!-- Logo 777 Audiovisual em cor Creme -->
       <a href="#hero" class="flex items-center gap-3 group" aria-label="777 Audiovisual Home">
-        <img src="assets/img/logo.png" alt="777 Audiovisual" class="h-8 sm:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        <img src="assets/img/logo-creme.png" alt="777 Audiovisual" class="h-8 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
       </a>
       
       <!-- Navegação Desktop -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-light text-zinc-300">
-        <a href="#servicos" class="hover:text-white transition-colors duration-200">Serviços</a>
-        <a href="#sobre" class="hover:text-white transition-colors duration-200">Sobre</a>
-        <a href="#cases" class="hover:text-white transition-colors duration-200">Cases</a>
-        <a href="#backstage" class="hover:text-white transition-colors duration-200">Bastidores</a>
-        <a href="#faq" class="hover:text-white transition-colors duration-200">Dúvidas</a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-brand-cream/80 font-display tracking-wide">
+        <a href="#servicos" class="hover:text-brand-cream transition-colors duration-200">Serviços</a>
+        <a href="#sobre" class="hover:text-brand-cream transition-colors duration-200">Sobre</a>
+        <a href="#cases" class="hover:text-brand-cream transition-colors duration-200">Cases</a>
+        <a href="#backstage" class="hover:text-brand-cream transition-colors duration-200">Bastidores</a>
+        <a href="#faq" class="hover:text-brand-cream transition-colors duration-200">Dúvidas</a>
       </nav>
       
       <!-- CTA Rápido Header -->
@@ -68,7 +73,7 @@
         <a href="https://wa.me/5511945489950?text=Ol%C3%A1%21+Vim+pelo+site+da+777+Audiovisual+e+gostaria+de+solicitar+um+or%C3%A7amento+para+minha+empresa." 
            target="_blank" 
            rel="noopener noreferrer" 
-           class="inline-flex items-center justify-center bg-brand-crimson hover:bg-brand-crimson-hover text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 shadow-lg shadow-brand-crimson/20 hover:scale-105 active:scale-95">
+           class="inline-flex items-center justify-center bg-brand-red hover:bg-brand-red-hover text-brand-cream border border-brand-cream/30 text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 shadow-lg shadow-brand-red/30 hover:scale-105 active:scale-95 font-display tracking-wider">
           <span>Orçamento WhatsApp</span>
         </a>
       </div>
@@ -79,32 +84,35 @@
   <!-- 1. HERO SECTION                                                           -->
   <!-- ========================================================================= -->
   <section id="hero" class="relative min-h-[92vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-black">
-    <!-- Camada de Vídeo / GIF em Loop com Vinheta -->
+    <!-- Camada de Vídeo / GIF em Loop com Vinheta Bordô -->
     <div class="absolute inset-0 z-0">
-      <img src="assets/img/hero_bg.gif" alt="Showreel 777 Audiovisual" class="w-full h-full object-cover opacity-40">
-      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/80"></div>
+      <img src="assets/img/hero_bg.gif" alt="Showreel 777 Audiovisual" class="w-full h-full object-cover opacity-35">
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/85"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-brand-red/15 rounded-full blur-[140px] pointer-events-none"></div>
     </div>
     
     <!-- Conteúdo Central -->
     <div class="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center flex flex-col items-center">
       <span class="pill-badge mb-6 reveal-on-scroll">
-        <span class="w-2 h-2 rounded-full bg-brand-crimson animate-pulse"></span>
-        PRODUÇÃO AUDIOVISUAL ESTRATÉGICA • SÃO PAULO
+        <span class="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
+        FOTOGRAFIA & PRODUÇÃO AUDIOVISUAL • SÃO PAULO
       </span>
       
-      <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1] reveal-on-scroll delay-100">
-        Transforme a presença da sua empresa com padrão de cinema.
+      <!-- Headline com Variação de Peso Agrandir -->
+      <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.18] reveal-on-scroll delay-100 max-w-4xl">
+        Comunicamos o <span class="text-brand-cream font-black underline decoration-brand-red decoration-4 underline-offset-8">valor da sua empresa</span> por meio de foto e vídeo. <span class="block mt-3 text-2xl sm:text-4xl lg:text-5xl font-light text-brand-cream/90 italic">Registramos momentos que merecem permanecer.</span>
       </h1>
       
-      <p class="font-body text-base sm:text-xl text-zinc-300 max-w-3xl mb-10 leading-relaxed font-light reveal-on-scroll delay-200">
-        Produção de vídeos corporativos de alta fidelidade, captação aérea cinematográfica com drone e cobertura de feiras para marcas que não aceitam parecer amadoras no mercado.
+      <!-- Subtítulo / Slogan de Apoio -->
+      <p class="font-body text-base sm:text-xl text-brand-cream/80 max-w-3xl mb-10 leading-relaxed font-light reveal-on-scroll delay-200">
+        Fotografia para empresas, marcas e pessoas. Produção corporativa de alta fidelidade, captação aérea cinematográfica com drone homologado e cobertura de feiras para marcas que exigem autoridade real em São Paulo.
       </p>
       
       <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto reveal-on-scroll delay-300">
         <a href="https://wa.me/5511945489950?text=Ol%C3%A1%21+Vim+pelo+site+da+777+Audiovisual+e+gostaria+de+solicitar+um+or%C3%A7amento+para+minha+empresa." 
            target="_blank" 
            rel="noopener noreferrer" 
-           class="btn-primary-crimson w-full sm:w-auto text-center">
+           class="btn-primary-bordeaux w-full sm:w-auto text-center">
           SOLICITAR ORÇAMENTO NO WHATSAPP →
         </a>
         <a href="#cases" class="btn-ghost w-full sm:w-auto text-center">
@@ -117,13 +125,13 @@
   <!-- ========================================================================= -->
   <!-- 2. MARCAS & NÚMEROS DE AUTORIDADE                                         -->
   <!-- ========================================================================= -->
-  <section id="marcas" class="py-20 bg-black border-y border-white/5 relative z-10">
+  <section id="marcas" class="py-20 bg-brand-surface border-y border-brand-cream/15 relative z-10">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center max-w-2xl mx-auto mb-10">
-        <h3 class="text-xs sm:text-sm uppercase tracking-widest text-zinc-400 font-semibold mb-2">
+        <h3 class="text-xs sm:text-sm uppercase tracking-widest text-brand-cream font-bold mb-2 font-display">
           Empresas que confiam em nosso olhar
         </h3>
-        <p class="text-zinc-500 text-sm font-light">
+        <p class="text-brand-cream/70 text-sm font-light">
           Mais de 40 marcas e corporações já transformaram sua autoridade com as nossas produções.
         </p>
       </div>
@@ -155,26 +163,26 @@
         </div>
       </div>
       
-      <!-- Divider sutil -->
-      <div class="w-full h-px bg-white/10 my-16"></div>
+      <!-- Divider com acento creme -->
+      <div class="w-full h-px bg-brand-cream/15 my-16"></div>
       
-      <!-- 4 Métricas de Autoridade -->
+      <!-- 4 Métricas de Autoridade em Tom Creme -->
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
         <div class="p-4 reveal-on-scroll">
-          <span class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight">+700</span>
-          <p class="text-xs sm:text-sm text-zinc-400 mt-2 font-light">Vídeos e filmes entregues</p>
+          <span class="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-brand-cream tracking-tight">+700</span>
+          <p class="text-xs sm:text-sm text-brand-cream/70 mt-2 font-light">Vídeos e filmes entregues</p>
         </div>
         <div class="p-4 reveal-on-scroll delay-100">
-          <span class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight">+40</span>
-          <p class="text-xs sm:text-sm text-zinc-400 mt-2 font-light">Grandes empresas atendidas</p>
+          <span class="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-brand-cream tracking-tight">+40</span>
+          <p class="text-xs sm:text-sm text-brand-cream/70 mt-2 font-light">Grandes empresas atendidas</p>
         </div>
         <div class="p-4 reveal-on-scroll delay-200">
-          <span class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight">+5 Mi</span>
-          <p class="text-xs sm:text-sm text-zinc-400 mt-2 font-light">Pessoas alcançadas nas redes</p>
+          <span class="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-brand-cream tracking-tight">+5 Mi</span>
+          <p class="text-xs sm:text-sm text-brand-cream/70 mt-2 font-light">Pessoas alcançadas nas redes</p>
         </div>
         <div class="p-4 reveal-on-scroll delay-300">
-          <span class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight">5 Anos</span>
-          <p class="text-xs sm:text-sm text-zinc-400 mt-2 font-light">De trajetória sólida em SP</p>
+          <span class="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-brand-cream tracking-tight">5 Anos</span>
+          <p class="text-xs sm:text-sm text-brand-cream/70 mt-2 font-light">De trajetória sólida em SP</p>
         </div>
       </div>
     </div>
@@ -183,18 +191,18 @@
   <!-- ========================================================================= -->
   <!-- 3. GRID DE SERVIÇOS (3x2 Simétrico e Harmonizado)                         -->
   <!-- ========================================================================= -->
-  <section id="servicos" class="py-24 bg-brand-surface relative z-10">
+  <section id="servicos" class="py-24 bg-black relative z-10">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mb-4">
+        <h2 class="font-display text-3xl sm:text-5xl font-bold text-brand-cream mb-4">
           Soluções audiovisuais completas para acelerar o seu negócio.
         </h2>
-        <p class="text-zinc-400 text-base sm:text-lg font-light">
+        <p class="text-brand-cream/75 text-base sm:text-lg font-light">
           Estrutura de equipamentos próprios de cinema para entregar rapidez e acabamento impecável em São Paulo.
         </p>
       </div>
       
-      <!-- Grid 3x2 Simétrico: Todos os 6 cards com exatamente o mesmo tamanho e altura -->
+      <!-- Grid 3x2 Simétrico: Todos os 6 cards com exatamente o mesmo tamanho e proporção -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
         <!-- Card 1: Drone (Destaque UVP) -->
@@ -204,10 +212,10 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent"></div>
           </div>
           <div class="relative z-10">
-            <span class="inline-flex items-center gap-1.5 bg-brand-crimson/20 border border-brand-crimson/40 text-brand-crimson font-bold text-xs uppercase px-3 py-1 rounded-full mb-3">
+            <span class="inline-flex items-center gap-1.5 bg-brand-red/30 border border-brand-cream/35 text-brand-cream font-bold text-xs uppercase px-3 py-1 rounded-full mb-3">
               ★ DIFERENCIAL 777
             </span>
-            <h3 class="font-display text-2xl font-bold text-white mt-1 leading-snug">
+            <h3 class="font-display text-2xl font-bold text-white group-hover:text-brand-cream transition-colors mt-1 leading-snug">
               Captação Aérea Cinematográfica com Drone
             </h3>
           </div>
@@ -228,10 +236,10 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent"></div>
           </div>
           <div class="relative z-10">
-            <span class="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 text-zinc-300 font-semibold text-xs uppercase px-3 py-1 rounded-full mb-3">
+            <span class="inline-flex items-center gap-1.5 bg-brand-cream/10 border border-brand-cream/25 text-brand-cream font-semibold text-xs uppercase px-3 py-1 rounded-full mb-3">
               INSTITUCIONAL
             </span>
-            <h3 class="font-display text-2xl font-bold text-white mt-1 leading-snug">
+            <h3 class="font-display text-2xl font-bold text-white group-hover:text-brand-cream transition-colors mt-1 leading-snug">
               Vídeo Corporativo & Institucional
             </h3>
           </div>
@@ -252,10 +260,10 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent"></div>
           </div>
           <div class="relative z-10">
-            <span class="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 text-zinc-300 font-semibold text-xs uppercase px-3 py-1 rounded-full mb-3">
+            <span class="inline-flex items-center gap-1.5 bg-brand-cream/10 border border-brand-cream/25 text-brand-cream font-semibold text-xs uppercase px-3 py-1 rounded-full mb-3">
               EVENTOS B2B
             </span>
-            <h3 class="font-display text-2xl font-bold text-white mt-1 leading-snug">
+            <h3 class="font-display text-2xl font-bold text-white group-hover:text-brand-cream transition-colors mt-1 leading-snug">
               Cobertura de Feiras & Eventos B2B
             </h3>
           </div>
@@ -276,10 +284,10 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent"></div>
           </div>
           <div class="relative z-10">
-            <span class="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 text-zinc-300 font-semibold text-xs uppercase px-3 py-1 rounded-full mb-3">
+            <span class="inline-flex items-center gap-1.5 bg-brand-cream/10 border border-brand-cream/25 text-brand-cream font-semibold text-xs uppercase px-3 py-1 rounded-full mb-3">
               PUBLICIDADE
             </span>
-            <h3 class="font-display text-2xl font-bold text-white mt-1 leading-snug">
+            <h3 class="font-display text-2xl font-bold text-white group-hover:text-brand-cream transition-colors mt-1 leading-snug">
               Fotografia & Still de Produto
             </h3>
           </div>
@@ -300,10 +308,10 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent"></div>
           </div>
           <div class="relative z-10">
-            <span class="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 text-zinc-300 font-semibold text-xs uppercase px-3 py-1 rounded-full mb-3">
+            <span class="inline-flex items-center gap-1.5 bg-brand-cream/10 border border-brand-cream/25 text-brand-cream font-semibold text-xs uppercase px-3 py-1 rounded-full mb-3">
               PÓS-PRODUÇÃO
             </span>
-            <h3 class="font-display text-2xl font-bold text-white mt-1 leading-snug">
+            <h3 class="font-display text-2xl font-bold text-white group-hover:text-brand-cream transition-colors mt-1 leading-snug">
               Motion Design & VFX
             </h3>
           </div>
@@ -324,10 +332,10 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent"></div>
           </div>
           <div class="relative z-10">
-            <span class="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 text-zinc-300 font-semibold text-xs uppercase px-3 py-1 rounded-full mb-3">
+            <span class="inline-flex items-center gap-1.5 bg-brand-cream/10 border border-brand-cream/25 text-brand-cream font-semibold text-xs uppercase px-3 py-1 rounded-full mb-3">
               VERTICAL 9:16
             </span>
-            <h3 class="font-display text-2xl font-bold text-white mt-1 leading-snug">
+            <h3 class="font-display text-2xl font-bold text-white group-hover:text-brand-cream transition-colors mt-1 leading-snug">
               Reels & Captação de Conteúdo
             </h3>
           </div>
@@ -346,37 +354,37 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- TRANSIÇÃO EM ONDAS FLUIDAS (Wave Divider SVG)                             -->
+  <!-- TRANSIÇÃO EM ONDAS FLUIDAS (Wave Divider SVG em Vermelho Bordô #85000d)  -->
   <!-- ========================================================================= -->
   <div class="w-full overflow-hidden leading-none -mb-1 relative z-10">
-    <svg class="w-full h-16 sm:h-24 md:h-32 text-brand-burgundy fill-current" viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <svg class="w-full h-16 sm:h-24 md:h-32 text-brand-red fill-current" viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z"></path>
     </svg>
   </div>
 
   <!-- ========================================================================= -->
-  <!-- 4. SOBRE A EMPRESA (Dividida em 2 Colunas: FOTO | CONTEÚDO)               -->
+  <!-- 4. SOBRE A EMPRESA (Dividida em 2 Colunas: FOTO EQUIPAMENTO | CONTEÚDO)   -->
   <!-- ========================================================================= -->
-  <section id="sobre" class="py-24 bg-brand-burgundy text-white relative z-10">
+  <section id="sobre" class="py-24 bg-brand-red text-brand-cream relative z-10">
     <div class="max-w-7xl mx-auto px-6">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
-        <!-- Coluna da Esquerda: FOTO (5 colunas) -->
+        <!-- Coluna da Esquerda: FOTO DE EQUIPAMENTO PROFISSIONAL (Substituindo o volante da BMW) -->
         <div class="lg:col-span-5 reveal-on-scroll">
           <div class="sobre-photo-container aspect-[4/5] sm:aspect-[3/4] relative">
-            <img src="assets/img/backstage/backstage_3.png" alt="777 Audiovisual em Ação no Set" class="w-full h-full object-cover">
+            <img src="assets/img/equipamento_camera.jpg" alt="Equipamentos de Cinema e Câmeras da 777 Audiovisual" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/20"></div>
             
             <!-- Floating Badge de Autoridade -->
             <div class="sobre-floating-badge flex items-center justify-between">
               <div>
-                <span class="text-[11px] uppercase tracking-wider text-zinc-400 font-semibold block">EXPERIÊNCIA COMPROVADA</span>
-                <strong class="text-white text-base sm:text-lg font-bold">Desde 2021 em SP</strong>
+                <span class="text-[11px] uppercase tracking-wider text-brand-cream/80 font-bold block font-display">EQUIPAMENTO PRÓPRIO</span>
+                <strong class="text-white text-base sm:text-lg font-bold font-display">Sony Cinema Line</strong>
               </div>
               <div class="text-right">
-                <span class="text-xs uppercase tracking-wider text-brand-crimson font-bold block">+700 VÍDEOS</span>
-                <span class="text-xs text-zinc-300">Entrega de precisão</span>
+                <span class="text-xs uppercase tracking-wider text-brand-cream font-black block font-display">+700 VÍDEOS</span>
+                <span class="text-xs text-brand-cream/75">Entrega de precisão</span>
               </div>
             </div>
           </div>
@@ -386,12 +394,12 @@
         <div class="lg:col-span-7 reveal-on-scroll delay-100">
           <span class="pill-badge-cream">QUEM SOMOS</span>
           
-          <h2 class="font-display text-3xl sm:text-5xl font-bold mt-6 mb-8 leading-tight">
+          <h2 class="font-display text-3xl sm:text-5xl font-bold mt-6 mb-8 leading-tight text-white">
             Há 5 anos fortalecendo a comunicação de grandes marcas.
           </h2>
           
           <!-- Texto Oficial do Briefing -->
-          <div class="space-y-5 text-zinc-100 text-base sm:text-lg font-light leading-relaxed">
+          <div class="space-y-5 text-brand-cream-light text-base sm:text-lg font-light leading-relaxed">
             <p>
               Há 5 anos, a <strong>777 Audiovisual</strong> ajuda empresas a fortalecerem sua comunicação por meio de fotografia, vídeos, imagens aéreas com drone, motion design e produção de conteúdo.
             </p>
@@ -407,7 +415,7 @@
           </div>
           
           <!-- 4 Pilares de Garantia em Grade 2x2 -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-8 pt-8 border-t border-white/20">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-8 pt-8 border-t border-brand-cream/25">
             <div class="pill-guarantee">✓ Equipamentos Próprios de Cinema</div>
             <div class="pill-guarantee">✓ Pilotos de Drone Homologados</div>
             <div class="pill-guarantee">✓ Rigor no Cumprimento de Prazos</div>
@@ -422,7 +430,7 @@
 
   <!-- Transição de volta ao Preto Absoluto -->
   <div class="w-full overflow-hidden leading-none -mt-1 bg-black relative z-10">
-    <svg class="w-full h-16 sm:h-24 md:h-32 text-brand-burgundy fill-current rotate-180" viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <svg class="w-full h-16 sm:h-24 md:h-32 text-brand-red fill-current rotate-180" viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z"></path>
     </svg>
   </div>
@@ -435,11 +443,11 @@
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
         <div>
           <span class="pill-badge">CASES & RESULTADOS</span>
-          <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-4">
+          <h2 class="font-display text-3xl sm:text-5xl font-bold text-brand-cream mt-4">
             Resultados reais para empresas que confiam em nosso olhar.
           </h2>
         </div>
-        <p class="text-zinc-400 text-sm mt-4 md:mt-0 max-w-xs font-light">
+        <p class="text-brand-cream/70 text-sm mt-4 md:mt-0 max-w-xs font-light">
           Clique em qualquer projeto para abrir a ficha técnica com desafio e métricas alcançadas.
         </p>
       </div>
@@ -448,7 +456,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
         <!-- Case 1: Automotivo -->
-        <article class="case-card group cursor-pointer relative rounded-2xl overflow-hidden border border-white/10 reveal-on-scroll" data-case="automotivo">
+        <article class="case-card group cursor-pointer relative rounded-2xl overflow-hidden reveal-on-scroll" data-case="automotivo">
           <div class="aspect-video w-full relative overflow-hidden">
             <img src="assets/img/automotivo_1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Case Automotivo">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
@@ -456,17 +464,17 @@
               <span class="play-btn-pulse">▶</span>
             </div>
             <div class="absolute bottom-6 left-6 right-6">
-              <span class="text-xs uppercase tracking-wider text-brand-crimson font-bold">AUTOMOTIVO</span>
-              <h3 class="text-xl sm:text-2xl font-bold text-white mt-1 group-hover:text-brand-crimson transition-colors">
+              <span class="text-xs uppercase tracking-wider text-brand-cream font-bold font-display">AUTOMOTIVO</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mt-1 group-hover:text-brand-cream transition-colors font-display">
                 Captação de Alta Velocidade & Campanha de Performance
               </h3>
-              <p class="text-xs sm:text-sm text-zinc-300 mt-1 font-light">+850 mil visualizações combinadas</p>
+              <p class="text-xs sm:text-sm text-brand-cream/80 mt-1 font-light">+850 mil visualizações combinadas</p>
             </div>
           </div>
         </article>
 
         <!-- Case 2: Corporativo -->
-        <article class="case-card group cursor-pointer relative rounded-2xl overflow-hidden border border-white/10 reveal-on-scroll delay-100" data-case="corporativo">
+        <article class="case-card group cursor-pointer relative rounded-2xl overflow-hidden reveal-on-scroll delay-100" data-case="corporativo">
           <div class="aspect-video w-full relative overflow-hidden">
             <img src="assets/img/institucional_1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Case Corporativo">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
@@ -474,17 +482,17 @@
               <span class="play-btn-pulse">▶</span>
             </div>
             <div class="absolute bottom-6 left-6 right-6">
-              <span class="text-xs uppercase tracking-wider text-brand-crimson font-bold">CORPORATIVO</span>
-              <h3 class="text-xl sm:text-2xl font-bold text-white mt-1 group-hover:text-brand-crimson transition-colors">
+              <span class="text-xs uppercase tracking-wider text-brand-cream font-bold font-display">CORPORATIVO</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mt-1 group-hover:text-brand-cream transition-colors font-display">
                 Apresentação Institucional de Fábrica & Infraestrutura
               </h3>
-              <p class="text-xs sm:text-sm text-zinc-300 mt-1 font-light">Filme comercial oficial para clientes B2B</p>
+              <p class="text-xs sm:text-sm text-brand-cream/80 mt-1 font-light">Filme comercial oficial para clientes B2B</p>
             </div>
           </div>
         </article>
 
         <!-- Case 3: Imobiliário -->
-        <article class="case-card group cursor-pointer relative rounded-2xl overflow-hidden border border-white/10 reveal-on-scroll" data-case="imobiliario">
+        <article class="case-card group cursor-pointer relative rounded-2xl overflow-hidden reveal-on-scroll" data-case="imobiliario">
           <div class="aspect-video w-full relative overflow-hidden">
             <img src="assets/img/imobiliario_1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Case Imobiliário">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
@@ -492,17 +500,17 @@
               <span class="play-btn-pulse">▶</span>
             </div>
             <div class="absolute bottom-6 left-6 right-6">
-              <span class="text-xs uppercase tracking-wider text-brand-crimson font-bold">IMOBILIÁRIO</span>
-              <h3 class="text-xl sm:text-2xl font-bold text-white mt-1 group-hover:text-brand-crimson transition-colors">
+              <span class="text-xs uppercase tracking-wider text-brand-cream font-bold font-display">IMOBILIÁRIO</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mt-1 group-hover:text-brand-cream transition-colors font-display">
                 Valorização Territorial & Venda de Empreendimentos
               </h3>
-              <p class="text-xs sm:text-sm text-zinc-300 mt-1 font-light">100% das cotas iniciais comercializadas</p>
+              <p class="text-xs sm:text-sm text-brand-cream/80 mt-1 font-light">100% das cotas iniciais comercializadas</p>
             </div>
           </div>
         </article>
 
         <!-- Case 4: Still de Produto -->
-        <article class="case-card group cursor-pointer relative rounded-2xl overflow-hidden border border-white/10 reveal-on-scroll delay-100" data-case="produto">
+        <article class="case-card group cursor-pointer relative rounded-2xl overflow-hidden reveal-on-scroll delay-100" data-case="produto">
           <div class="aspect-video w-full relative overflow-hidden">
             <img src="assets/img/still_1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Case Still de Produto">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
@@ -510,11 +518,11 @@
               <span class="play-btn-pulse">▶</span>
             </div>
             <div class="absolute bottom-6 left-6 right-6">
-              <span class="text-xs uppercase tracking-wider text-brand-crimson font-bold">PRODUTO / STILL</span>
-              <h3 class="text-xl sm:text-2xl font-bold text-white mt-1 group-hover:text-brand-crimson transition-colors">
+              <span class="text-xs uppercase tracking-wider text-brand-cream font-bold font-display">PRODUTO / STILL</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mt-1 group-hover:text-brand-cream transition-colors font-display">
                 Criação de Desejo Visual & Valor Percebido em Catálogo
               </h3>
-              <p class="text-xs sm:text-sm text-zinc-300 mt-1 font-light">Redução de 34% no CPA em campanhas</p>
+              <p class="text-xs sm:text-sm text-brand-cream/80 mt-1 font-light">Redução de 34% no CPA em campanhas</p>
             </div>
           </div>
         </article>
@@ -524,91 +532,98 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 6. BASTIDORES EM AÇÃO (Backstage Carousel)                                 -->
+  <!-- 6. BASTIDORES EM AÇÃO (Operacional Real — Frase Atualizada)                -->
   <!-- ========================================================================= -->
-  <section id="backstage" class="py-24 bg-brand-surface border-t border-white/5 relative z-10">
+  <section id="backstage" class="py-24 bg-brand-surface border-t border-brand-cream/15 relative z-10">
     <div class="max-w-7xl mx-auto px-6 mb-12 flex flex-col md:flex-row md:items-end justify-between">
       <div>
         <span class="pill-badge">OPERACIONAL REAL</span>
-        <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-4 mb-2">
-          Zero amadorismo. Conheça a nossa estrutura no set de filmagem.
+        <!-- Frase Oficial Solicitada pelo Cliente -->
+        <h2 class="font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-white mt-4 mb-3 max-w-3xl leading-snug">
+          Seu projeto em boas mãos, com um olhar criativo e estratégico para extrair o máximo de cada imagem.
         </h2>
-        <p class="text-zinc-400 text-base sm:text-lg font-light max-w-2xl">
+        <p class="text-brand-cream/80 text-base sm:text-lg font-light max-w-2xl">
           Não usamos bancos de imagens. Aqui você vê exatamente quem vai estar no seu galpão, na sua feira ou na sua diretoria.
         </p>
       </div>
       
       <!-- Controles Desktop -->
       <div class="hidden md:flex items-center gap-3 mt-6 md:mt-0">
-        <button id="carousel-prev" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 active:scale-95 transition-all" aria-label="Anterior">
+        <button id="carousel-prev" class="w-12 h-12 rounded-full border border-brand-cream/30 flex items-center justify-center text-brand-cream hover:bg-brand-red active:scale-95 transition-all" aria-label="Anterior">
           ←
         </button>
-        <button id="carousel-next" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 active:scale-95 transition-all" aria-label="Próximo">
+        <button id="carousel-next" class="w-12 h-12 rounded-full border border-brand-cream/30 flex items-center justify-center text-brand-cream hover:bg-brand-red active:scale-95 transition-all" aria-label="Próximo">
           →
         </button>
       </div>
     </div>
     
-    <!-- Carrossel com Snap Scroll -->
+    <!-- Carrossel com Snap Scroll e Fotos de Equipamento & Set -->
     <div id="backstage-carousel" class="flex gap-6 overflow-x-auto snap-x snap-mandatory px-6 max-w-7xl mx-auto no-scrollbar pb-6">
       
-      <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-zinc-900/90 border border-white/10">
-        <div class="aspect-[4/3] overflow-hidden bg-zinc-800">
-          <img src="assets/img/backstage/backstage_1.png" class="w-full h-full object-cover" alt="Drone em Set">
+      <!-- Card 1: Drone -->
+      <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-brand-card border border-brand-cream/15">
+        <div class="aspect-[4/3] overflow-hidden bg-black">
+          <img src="assets/img/equipamento_drone.jpg" class="w-full h-full object-cover" alt="Drone em Set">
         </div>
         <div class="p-5">
-          <h4 class="font-bold text-white text-base">Operação Aérea Homologada</h4>
-          <p class="text-xs text-zinc-400 mt-1 font-light">Drones de última geração com transmissão em tempo real para monitor de direção em solo.</p>
+          <h4 class="font-display font-bold text-brand-cream text-base">Operação Aérea Homologada</h4>
+          <p class="text-xs text-brand-cream/70 mt-1 font-light">Drones de última geração com transmissão em tempo real para monitor de direção em solo.</p>
         </div>
       </div>
 
-      <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-zinc-900/90 border border-white/10">
-        <div class="aspect-[4/3] overflow-hidden bg-zinc-800">
-          <img src="assets/img/backstage/backstage_2.png" class="w-full h-full object-cover" alt="Cinema Line">
+      <!-- Card 2: Câmera Sony e Lentes (Substituindo o volante da BMW no carrossel) -->
+      <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-brand-card border border-brand-cream/15">
+        <div class="aspect-[4/3] overflow-hidden bg-black">
+          <img src="assets/img/equipamento_camera.jpg" class="w-full h-full object-cover" alt="Cinema Line e Lentes Prime">
         </div>
         <div class="p-5">
-          <h4 class="font-bold text-white text-base">Cinema Line & Estabilização</h4>
-          <p class="text-xs text-zinc-400 mt-1 font-light">Rigs de câmera com lentes cinematográficas prontas para registrar movimentos rápidos e fluidos.</p>
+          <h4 class="font-display font-bold text-brand-cream text-base">Cinema Line & Lentes Prime</h4>
+          <p class="text-xs text-brand-cream/70 mt-1 font-light">Sensores de alta fidelidade e lentes com abertura máxima para foco cinematográfico e profundidade.</p>
         </div>
       </div>
 
-      <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-zinc-900/90 border border-white/10">
-        <div class="aspect-[4/3] overflow-hidden bg-zinc-800">
-          <img src="assets/img/backstage/backstage_3.png" class="w-full h-full object-cover" alt="Direção Executiva">
+      <!-- Card 3: Locações Reais -->
+      <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-brand-card border border-brand-cream/15">
+        <div class="aspect-[4/3] overflow-hidden bg-black">
+          <img src="assets/img/backstage/backstage_2.png" class="w-full h-full object-cover" alt="Direção Executiva">
         </div>
         <div class="p-5">
-          <h4 class="font-bold text-white text-base">Direção Executiva Amigável</h4>
-          <p class="text-xs text-zinc-400 mt-1 font-light">Ajudamos diretores e colaboradores que não têm costume de falar para a câmera a soarem naturais.</p>
+          <h4 class="font-display font-bold text-brand-cream text-base">Direção Executiva Amigável</h4>
+          <p class="text-xs text-brand-cream/70 mt-1 font-light">Ajudamos diretores e colaboradores que não têm costume de falar para a câmera a soarem naturais.</p>
         </div>
       </div>
 
-      <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-zinc-900/90 border border-white/10">
-        <div class="aspect-[4/3] overflow-hidden bg-zinc-800">
+      <!-- Card 4: Feiras e Galpões -->
+      <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-brand-card border border-brand-cream/15">
+        <div class="aspect-[4/3] overflow-hidden bg-black">
           <img src="assets/img/backstage/backstage_4.png" class="w-full h-full object-cover" alt="Feiras em SP">
         </div>
         <div class="p-5">
-          <h4 class="font-bold text-white text-base">Presença em Feiras & Galpões em SP</h4>
-          <p class="text-xs text-zinc-400 mt-1 font-light">Estrutura ágil e portátil com baterias e backups instantâneos para filmar sem travar sua operação.</p>
+          <h4 class="font-display font-bold text-brand-cream text-base">Presença em Feiras & Galpões em SP</h4>
+          <p class="text-xs text-brand-cream/70 mt-1 font-light">Estrutura ágil e portátil com baterias e backups instantâneos para filmar sem travar sua operação.</p>
         </div>
       </div>
 
-      <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-zinc-900/90 border border-white/10">
-        <div class="aspect-[4/3] overflow-hidden bg-zinc-800">
+      <!-- Card 5: Iluminação de Set -->
+      <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-brand-card border border-brand-cream/15">
+        <div class="aspect-[4/3] overflow-hidden bg-black">
           <img src="assets/img/backstage/backstage_5.png" class="w-full h-full object-cover" alt="Câmeras e Iluminação">
         </div>
         <div class="p-5">
-          <h4 class="font-bold text-white text-base">Iluminação Profissional de Set</h4>
-          <p class="text-xs text-zinc-400 mt-1 font-light">Controle de luz preciso para estúdios, fábricas e ambientes com iluminação desafiadora.</p>
+          <h4 class="font-display font-bold text-brand-cream text-base">Iluminação Profissional de Set</h4>
+          <p class="text-xs text-brand-cream/70 mt-1 font-light">Controle de luz preciso para estúdios, fábricas e ambientes com iluminação desafiadora.</p>
         </div>
       </div>
 
-      <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-zinc-900/90 border border-white/10">
-        <div class="aspect-[4/3] overflow-hidden bg-zinc-800">
-          <img src="assets/img/backstage/backstage_6.png" class="w-full h-full object-cover" alt="Tratamento e Montagem">
+      <!-- Card 6: Timeline de Pós-Produção -->
+      <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-brand-card border border-brand-cream/15">
+        <div class="aspect-[4/3] overflow-hidden bg-black">
+          <img src="assets/img/pos_producao.jpg" class="w-full h-full object-cover" alt="Tratamento e Montagem">
         </div>
         <div class="p-5">
-          <h4 class="font-bold text-white text-base">Pós-Produção & Color Grading</h4>
-          <p class="text-xs text-zinc-400 mt-1 font-light">Calibração de cor de padrão cinematográfico para valorizar a paleta visual da sua marca.</p>
+          <h4 class="font-display font-bold text-brand-cream text-base">Pós-Produção & Color Grading</h4>
+          <p class="text-xs text-brand-cream/70 mt-1 font-light">Edição dinâmica, sound design e calibração de cor de padrão cinematográfico para valorizar sua marca.</p>
         </div>
       </div>
 
@@ -618,14 +633,14 @@
   <!-- ========================================================================= -->
   <!-- 7. FAQ ESTRATÉGICO                                                        -->
   <!-- ========================================================================= -->
-  <section id="faq" class="py-24 bg-black border-t border-white/5 relative z-10">
+  <section id="faq" class="py-24 bg-black border-t border-brand-cream/15 relative z-10">
     <div class="max-w-4xl mx-auto px-6">
       <div class="text-center mb-16">
         <span class="pill-badge">TIRE SUAS DÚVIDAS</span>
-        <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-4 mb-3">
+        <h2 class="font-display text-3xl sm:text-5xl font-bold text-brand-cream mt-4 mb-3">
           Perguntas frequentes antes de iniciar o seu projeto.
         </h2>
-        <p class="text-zinc-400 text-base font-light">
+        <p class="text-brand-cream/70 text-base font-light">
           Transparência total para você tomar a decisão mais rápida e segura para sua empresa.
         </p>
       </div>
@@ -633,78 +648,78 @@
       <div class="space-y-4">
         
         <!-- P1 -->
-        <details class="faq-item group rounded-2xl bg-zinc-900/50 border border-white/10 p-6 transition-all duration-200">
-          <summary class="flex items-center justify-between cursor-pointer list-none text-base sm:text-lg font-medium text-white group-open:text-brand-crimson">
+        <details class="faq-item group rounded-2xl p-6 transition-all duration-200">
+          <summary class="flex items-center justify-between cursor-pointer list-none text-base sm:text-lg font-medium text-white group-open:text-brand-cream font-display">
             <span>Qual o prazo médio de entrega de um vídeo ou cobertura de feira?</span>
-            <span class="faq-icon ml-4 text-zinc-400 group-open:rotate-45 transition-transform text-2xl font-light">+</span>
+            <span class="faq-icon ml-4 text-brand-cream group-open:rotate-45 transition-transform text-2xl font-light">+</span>
           </summary>
-          <div class="mt-4 text-sm sm:text-base text-zinc-300 font-light leading-relaxed pt-4 border-t border-white/5">
+          <div class="mt-4 text-sm sm:text-base text-brand-cream/80 font-light leading-relaxed pt-4 border-t border-brand-cream/10">
             Para <strong>coberturas de feiras e conteúdos de redes sociais</strong>, entregamos versões no mesmo dia ou em até <strong>24 horas</strong> para você postar enquanto o evento ainda acontece. Para <strong>filmes institucionais e vídeos corporativos completos</strong> (com roteiro, gravação e pós-produção), nosso prazo médio é de <strong>5 a 10 dias úteis</strong>, sempre com cronograma combinado previamente.
           </div>
         </details>
 
         <!-- P2 -->
-        <details class="faq-item group rounded-2xl bg-zinc-900/50 border border-white/10 p-6 transition-all duration-200">
-          <summary class="flex items-center justify-between cursor-pointer list-none text-base sm:text-lg font-medium text-white group-open:text-brand-crimson">
+        <details class="faq-item group rounded-2xl p-6 transition-all duration-200">
+          <summary class="flex items-center justify-between cursor-pointer list-none text-base sm:text-lg font-medium text-white group-open:text-brand-cream font-display">
             <span>A 777 Audiovisual atende em quais regiões?</span>
-            <span class="faq-icon ml-4 text-zinc-400 group-open:rotate-45 transition-transform text-2xl font-light">+</span>
+            <span class="faq-icon ml-4 text-brand-cream group-open:rotate-45 transition-transform text-2xl font-light">+</span>
           </summary>
-          <div class="mt-4 text-sm sm:text-base text-zinc-300 font-light leading-relaxed pt-4 border-t border-white/5">
+          <div class="mt-4 text-sm sm:text-base text-brand-cream/80 font-light leading-relaxed pt-4 border-t border-brand-cream/10">
             Nossa atuação é <strong>focada em todo o estado de São Paulo (capital, Grande SP, interior e litoral)</strong>. Temos estrutura móvel com logística ágil para deslocamento até a sua empresa, galpão fabril ou evento.
           </div>
         </details>
 
         <!-- P3 -->
-        <details class="faq-item group rounded-2xl bg-zinc-900/50 border border-white/10 p-6 transition-all duration-200">
-          <summary class="flex items-center justify-between cursor-pointer list-none text-base sm:text-lg font-medium text-white group-open:text-brand-crimson">
+        <details class="faq-item group rounded-2xl p-6 transition-all duration-200">
+          <summary class="flex items-center justify-between cursor-pointer list-none text-base sm:text-lg font-medium text-white group-open:text-brand-cream font-display">
             <span>Como funciona a segurança e autorização legal para os voos de Drone?</span>
-            <span class="faq-icon ml-4 text-zinc-400 group-open:rotate-45 transition-transform text-2xl font-light">+</span>
+            <span class="faq-icon ml-4 text-brand-cream group-open:rotate-45 transition-transform text-2xl font-light">+</span>
           </summary>
-          <div class="mt-4 text-sm sm:text-base text-zinc-300 font-light leading-relaxed pt-4 border-t border-white/5">
+          <div class="mt-4 text-sm sm:text-base text-brand-cream/80 font-light leading-relaxed pt-4 border-t border-brand-cream/10">
             Segurança é nosso primeiro critério. Nossos drones e pilotos possuem cadastros regulares na <strong>ANAC (SISANT)</strong>, homologação na <strong>Anatel</strong> e plano de voo emitido via <strong>DECEA (SARPAS)</strong>. Cuidamos de todo o processo burocrático e operacional para que sua empresa tenha zero risco jurídico ou administrativo.
           </div>
         </details>
 
         <!-- P4 -->
-        <details class="faq-item group rounded-2xl bg-zinc-900/50 border border-white/10 p-6 transition-all duration-200">
-          <summary class="flex items-center justify-between cursor-pointer list-none text-base sm:text-lg font-medium text-white group-open:text-brand-crimson">
+        <details class="faq-item group rounded-2xl p-6 transition-all duration-200">
+          <summary class="flex items-center justify-between cursor-pointer list-none text-base sm:text-lg font-medium text-white group-open:text-brand-cream font-display">
             <span>Vocês entregam os vídeos já adaptados para TV/YouTube e Reels/Instagram?</span>
-            <span class="faq-icon ml-4 text-zinc-400 group-open:rotate-45 transition-transform text-2xl font-light">+</span>
+            <span class="faq-icon ml-4 text-brand-cream group-open:rotate-45 transition-transform text-2xl font-light">+</span>
           </summary>
-          <div class="mt-4 text-sm sm:text-base text-zinc-300 font-light leading-relaxed pt-4 border-t border-white/5">
+          <div class="mt-4 text-sm sm:text-base text-brand-cream/80 font-light leading-relaxed pt-4 border-t border-brand-cream/10">
             Sim, com certeza. Entregamos os pacotes com todos os masters finalizados: versões horizontais em Widescreen 4K (16:9) para telas corporativas, sites e YouTube, e versões verticais (9:16) com enquadramentos planejados na gravação para Reels, Stories e anúncios de tráfego pago.
           </div>
         </details>
 
         <!-- P5 -->
-        <details class="faq-item group rounded-2xl bg-zinc-900/50 border border-white/10 p-6 transition-all duration-200">
-          <summary class="flex items-center justify-between cursor-pointer list-none text-base sm:text-lg font-medium text-white group-open:text-brand-crimson">
+        <details class="faq-item group rounded-2xl p-6 transition-all duration-200">
+          <summary class="flex items-center justify-between cursor-pointer list-none text-base sm:text-lg font-medium text-white group-open:text-brand-cream font-display">
             <span>Nossa equipe ou diretoria tem vergonha de gravar. Vocês ajudam na hora?</span>
-            <span class="faq-icon ml-4 text-zinc-400 group-open:rotate-45 transition-transform text-2xl font-light">+</span>
+            <span class="faq-icon ml-4 text-brand-cream group-open:rotate-45 transition-transform text-2xl font-light">+</span>
           </summary>
-          <div class="mt-4 text-sm sm:text-base text-zinc-300 font-light leading-relaxed pt-4 border-t border-white/5">
+          <div class="mt-4 text-sm sm:text-base text-brand-cream/80 font-light leading-relaxed pt-4 border-t border-brand-cream/10">
             Essa é uma das nossas maiores qualidades em set. Nosso papel não é só apertar o botão de gravação; atuamos como diretores de cena. Conduzimos as entrevistas com tranquilidade, alinhamos o tom de voz e orientamos o entrevistado passo a passo até que a fala soe fluida, natural e com autoridade executiva.
           </div>
         </details>
 
         <!-- P6 -->
-        <details class="faq-item group rounded-2xl bg-zinc-900/50 border border-white/10 p-6 transition-all duration-200">
-          <summary class="flex items-center justify-between cursor-pointer list-none text-base sm:text-lg font-medium text-white group-open:text-brand-crimson">
+        <details class="faq-item group rounded-2xl p-6 transition-all duration-200">
+          <summary class="flex items-center justify-between cursor-pointer list-none text-base sm:text-lg font-medium text-white group-open:text-brand-cream font-display">
             <span>A 777 Audiovisual atende casamentos ou eventos familiares?</span>
-            <span class="faq-icon ml-4 text-zinc-400 group-open:rotate-45 transition-transform text-2xl font-light">+</span>
+            <span class="faq-icon ml-4 text-brand-cream group-open:rotate-45 transition-transform text-2xl font-light">+</span>
           </summary>
-          <div class="mt-4 text-sm sm:text-base text-zinc-300 font-light leading-relaxed pt-4 border-t border-white/5">
+          <div class="mt-4 text-sm sm:text-base text-brand-cream/80 font-light leading-relaxed pt-4 border-t border-brand-cream/10">
             Não. Nosso foco é <strong>100% corporativo, industrial, publicitário e automotivo</strong>. Essa especialização deliberada nos permite investir em equipamentos específicos de cinema e metodologias voltadas para negócios B2B.
           </div>
         </details>
 
         <!-- P7 -->
-        <details class="faq-item group rounded-2xl bg-zinc-900/50 border border-white/10 p-6 transition-all duration-200">
-          <summary class="flex items-center justify-between cursor-pointer list-none text-base sm:text-lg font-medium text-white group-open:text-brand-crimson">
+        <details class="faq-item group rounded-2xl p-6 transition-all duration-200">
+          <summary class="flex items-center justify-between cursor-pointer list-none text-base sm:text-lg font-medium text-white group-open:text-brand-cream font-display">
             <span>Como solicito um orçamento rápido para a minha demanda?</span>
-            <span class="faq-icon ml-4 text-zinc-400 group-open:rotate-45 transition-transform text-2xl font-light">+</span>
+            <span class="faq-icon ml-4 text-brand-cream group-open:rotate-45 transition-transform text-2xl font-light">+</span>
           </summary>
-          <div class="mt-4 text-sm sm:text-base text-zinc-300 font-light leading-relaxed pt-4 border-t border-white/5">
+          <div class="mt-4 text-sm sm:text-base text-brand-cream/80 font-light leading-relaxed pt-4 border-t border-brand-cream/10">
             Basta clicar em qualquer um dos botões de WhatsApp da página. Em poucos minutos, nossa equipe de produção entenderá o seu objetivo, a data pretendida e montará uma proposta personalizada sem compromisso.
           </div>
         </details>
@@ -716,59 +731,63 @@
   <!-- ========================================================================= -->
   <!-- 8. CONTATOS & FECHAMENTO                                                  -->
   <!-- ========================================================================= -->
-  <footer id="contato" class="py-24 bg-brand-surface border-t border-white/10 relative overflow-hidden z-10">
-    <!-- Glow Carmesim em background -->
-    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-brand-crimson/10 rounded-full blur-[140px] pointer-events-none"></div>
+  <footer id="contato" class="py-24 bg-brand-surface border-t border-brand-cream/15 relative overflow-hidden z-10">
+    <!-- Glow Bordô em background -->
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-brand-red/20 rounded-full blur-[140px] pointer-events-none"></div>
     
     <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
       <span class="pill-badge">VAMOS TRABALHAR JUNTOS?</span>
       
-      <h2 class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-white mt-6 mb-4">
+      <h2 class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-brand-cream mt-6 mb-4">
         Sua empresa não pode mais parecer comum no mercado.
       </h2>
       
-      <p class="text-zinc-300 text-base sm:text-xl font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+      <p class="text-brand-cream/80 text-base sm:text-xl font-light max-w-2xl mx-auto mb-10 leading-relaxed">
         Fale agora com a nossa equipe de produção no WhatsApp e receba uma proposta personalizada para sua empresa hoje mesmo.
       </p>
       
       <a href="https://wa.me/5511945489950?text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+r%C3%A1pido+para+um+projeto+audiovisual+com+a+777." 
          target="_blank" 
          rel="noopener noreferrer" 
-         class="btn-primary-crimson inline-flex items-center gap-3 text-base sm:text-lg px-8 sm:px-12 py-4 sm:py-5">
+         class="btn-primary-bordeaux inline-flex items-center gap-3 text-base sm:text-lg px-8 sm:px-12 py-4 sm:py-5">
         <span>FALAR COM A PRODUÇÃO NO WHATSAPP →</span>
       </a>
       
       <!-- Grid de Contatos Oficiais -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-white/10 text-left">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-brand-cream/15 text-left">
         <div>
-          <span class="text-xs uppercase tracking-wider text-zinc-500 font-medium">WhatsApp Comercial</span>
-          <p class="text-white font-medium mt-1">
-            <a href="https://wa.me/5511945489950" class="hover:text-brand-crimson transition-colors">(11) 94548-9950</a>
+          <span class="text-xs uppercase tracking-wider text-brand-cream/60 font-semibold font-display">WhatsApp Comercial</span>
+          <p class="text-brand-cream font-medium mt-1">
+            <a href="https://wa.me/5511945489950" class="hover:text-white transition-colors">(11) 94548-9950</a>
           </p>
         </div>
         <div>
-          <span class="text-xs uppercase tracking-wider text-zinc-500 font-medium">Plantão / Alternativo</span>
-          <p class="text-white font-medium mt-1">
-            <a href="tel:11971639592" class="hover:text-brand-crimson transition-colors">(11) 97163-9592</a>
+          <span class="text-xs uppercase tracking-wider text-brand-cream/60 font-semibold font-display">Plantão / Alternativo</span>
+          <p class="text-brand-cream font-medium mt-1">
+            <a href="tel:11971639592" class="hover:text-white transition-colors">(11) 97163-9592</a>
           </p>
         </div>
         <div>
-          <span class="text-xs uppercase tracking-wider text-zinc-500 font-medium">E-mail Institucional</span>
-          <p class="text-white font-medium mt-1">
-            <a href="mailto:777audiovisuals@gmail.com" class="hover:text-brand-crimson transition-colors">777audiovisuals@gmail.com</a>
+          <span class="text-xs uppercase tracking-wider text-brand-cream/60 font-semibold font-display">E-mail Institucional</span>
+          <p class="text-brand-cream font-medium mt-1">
+            <a href="mailto:777audiovisuals@gmail.com" class="hover:text-white transition-colors">777audiovisuals@gmail.com</a>
           </p>
         </div>
         <div>
-          <span class="text-xs uppercase tracking-wider text-zinc-500 font-medium">Instagram Oficial</span>
-          <p class="text-white font-medium mt-1">
-            <a href="https://www.instagram.com/777audiovisual_/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-crimson transition-colors">@777audiovisual_</a>
+          <span class="text-xs uppercase tracking-wider text-brand-cream/60 font-semibold font-display">Instagram Oficial</span>
+          <p class="text-brand-cream font-medium mt-1">
+            <a href="https://www.instagram.com/777audiovisual_/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">@777audiovisual_</a>
           </p>
         </div>
       </div>
       
-      <p class="text-xs text-zinc-500 mt-16 font-light">
-        © 2026 777 Audiovisual. Todos os direitos reservados. Atendimento especializado em todo o Estado de São Paulo.
-      </p>
+      <!-- Logo Creme no Rodapé -->
+      <div class="mt-14 pt-8 border-t border-brand-cream/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <img src="assets/img/logo-creme.png" alt="777 Audiovisual" class="h-7 w-auto object-contain opacity-70">
+        <p class="text-xs text-brand-cream/60 font-light">
+          © 2026 777 Audiovisual. Todos os direitos reservados. Fotografia para empresas, marcas e pessoas em SP.
+        </p>
+      </div>
     </div>
   </footer>
 
@@ -776,19 +795,19 @@
   <!-- DRAWER / SHEET INTERATIVO DE CASES                                        -->
   <!-- ========================================================================= -->
   <div id="case-drawer-backdrop" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none flex justify-end">
-    <div id="case-drawer-panel" class="w-full max-w-xl bg-zinc-950 border-l border-white/10 p-6 sm:p-8 overflow-y-auto translate-x-full shadow-2xl flex flex-col justify-between">
+    <div id="case-drawer-panel" class="w-full max-w-xl p-6 sm:p-8 overflow-y-auto translate-x-full shadow-2xl flex flex-col justify-between">
       
       <!-- Topo Drawer -->
       <div>
-        <div class="flex items-center justify-between pb-6 border-b border-white/10">
+        <div class="flex items-center justify-between pb-6 border-b border-brand-cream/15">
           <span id="drawer-badge" class="pill-badge text-xs">NICHO</span>
-          <button id="drawer-close" class="text-zinc-400 hover:text-white text-sm font-semibold p-2 transition-colors flex items-center gap-1.5" aria-label="Fechar Gaveta">
+          <button id="drawer-close" class="text-brand-cream/70 hover:text-brand-cream text-sm font-semibold p-2 transition-colors flex items-center gap-1.5 font-display" aria-label="Fechar Gaveta">
             <span class="text-lg">✕</span> Fechar
           </button>
         </div>
         
         <!-- Imagem / Prévia de Vídeo -->
-        <div class="aspect-video w-full rounded-xl bg-zinc-900 mt-6 overflow-hidden border border-white/10 relative">
+        <div class="aspect-video w-full rounded-xl bg-black mt-6 overflow-hidden border border-brand-cream/15 relative">
           <img id="drawer-image" src="" alt="" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         </div>
@@ -798,27 +817,27 @@
         </h3>
         
         <!-- Ficha Técnica -->
-        <div class="space-y-5 text-sm text-zinc-300 font-light">
-          <div class="p-4 rounded-xl bg-zinc-900/60 border border-white/5">
-            <strong class="text-white block font-semibold text-xs uppercase tracking-wider mb-1 text-zinc-400">O Desafio do Cliente:</strong>
-            <p id="drawer-desafio" class="leading-relaxed"></p>
+        <div class="space-y-5 text-sm text-brand-cream font-light">
+          <div class="p-4 rounded-xl bg-brand-surface-elevated border border-brand-cream/10">
+            <strong class="text-brand-cream block font-semibold text-xs uppercase tracking-wider mb-1 font-display">O Desafio do Cliente:</strong>
+            <p id="drawer-desafio" class="leading-relaxed text-brand-cream/80"></p>
           </div>
           
-          <div class="p-4 rounded-xl bg-zinc-900/60 border border-white/5">
-            <strong class="text-white block font-semibold text-xs uppercase tracking-wider mb-1 text-zinc-400">A Solução Técnica 777:</strong>
-            <p id="drawer-solucao" class="leading-relaxed"></p>
+          <div class="p-4 rounded-xl bg-brand-surface-elevated border border-brand-cream/10">
+            <strong class="text-brand-cream block font-semibold text-xs uppercase tracking-wider mb-1 font-display">A Solução Técnica 777:</strong>
+            <p id="drawer-solucao" class="leading-relaxed text-brand-cream/80"></p>
           </div>
           
-          <div class="p-4 rounded-xl bg-red-950/20 border border-brand-crimson/30">
-            <strong class="text-brand-crimson block font-semibold text-xs uppercase tracking-wider mb-1">O Resultado Mensurável:</strong>
+          <div class="p-4 rounded-xl bg-brand-red/25 border border-brand-cream/30">
+            <strong class="text-brand-cream block font-semibold text-xs uppercase tracking-wider mb-1 font-display">O Resultado Mensurável:</strong>
             <p id="drawer-resultado" class="text-white font-medium leading-relaxed"></p>
           </div>
         </div>
       </div>
       
       <!-- CTA Fixo da Gaveta -->
-      <div class="pt-8 border-t border-white/10 mt-8">
-        <a id="drawer-cta" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary-crimson w-full text-center block text-sm sm:text-base">
+      <div class="pt-8 border-t border-brand-cream/15 mt-8">
+        <a id="drawer-cta" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary-bordeaux w-full text-center block text-sm sm:text-base">
           Quero um Projeto como Este no WhatsApp →
         </a>
       </div>
@@ -833,11 +852,11 @@
     <a href="https://wa.me/5511945489950?text=Ol%C3%A1%21+Estou+na+p%C3%A1gina+da+777+e+preciso+de+um+or%C3%A7amento+audiovisual+para+minha+empresa+em+SP." 
        target="_blank" 
        rel="noopener noreferrer" 
-       class="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-brand-crimson text-white shadow-2xl hover:scale-110 active:scale-95 transition-transform duration-200 group"
+       class="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-brand-red text-brand-cream border border-brand-cream/35 shadow-2xl hover:scale-110 active:scale-95 transition-transform duration-200 group"
        aria-label="Falar no WhatsApp com a 777 Audiovisual">
       
-      <!-- Pulso Animado -->
-      <span class="absolute inset-0 rounded-full bg-brand-crimson animate-ping opacity-30"></span>
+      <!-- Pulso Animado Bordô -->
+      <span class="absolute inset-0 rounded-full bg-brand-red animate-ping opacity-35"></span>
       
       <!-- Ícone WhatsApp SVG -->
       <svg class="w-7 h-7 sm:w-8 sm:h-8 fill-current relative z-10" viewBox="0 0 24 24">
@@ -845,7 +864,7 @@
       </svg>
       
       <!-- Tooltip Desktop -->
-      <span class="absolute right-full mr-3 top-1/2 -translate-y-1/2 whitespace-nowrap bg-zinc-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none hidden sm:block shadow-xl">
+      <span class="absolute right-full mr-3 top-1/2 -translate-y-1/2 whitespace-nowrap bg-zinc-950 text-brand-cream text-xs font-semibold px-3 py-1.5 rounded-lg border border-brand-cream/20 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none hidden sm:block shadow-xl font-display">
         Falar com a Produção no WhatsApp
       </span>
     </a>
