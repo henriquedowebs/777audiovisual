@@ -50,13 +50,13 @@
 <body class="bg-black text-brand-cream selection:bg-brand-red selection:text-brand-cream">
 
   <!-- ========================================================================= -->
-  <!-- 0. HEADER FIXO                                                            -->
+  <!-- 0. HEADER FIXO COM MENU RESPONSIVO                                         -->
   <!-- ========================================================================= -->
   <header class="fixed top-0 inset-x-0 z-40 transition-all duration-300 bg-black/60 backdrop-blur-md border-b border-brand-cream/15">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <!-- Logo 777 Audiovisual em cor Creme -->
       <a href="#hero" class="flex items-center gap-3 group" aria-label="777 Audiovisual Home">
-        <img src="assets/img/logo-creme.png" alt="777 Audiovisual" class="h-8 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        <img src="assets/img/logo-creme.png" alt="777 Audiovisual" class="h-8 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" fetchpriority="high">
       </a>
       
       <!-- Navegação Desktop -->
@@ -68,15 +68,33 @@
         <a href="#faq" class="hover:text-brand-cream transition-colors duration-200">Dúvidas</a>
       </nav>
       
-      <!-- CTA Rápido Header -->
-      <div class="flex items-center gap-4">
+      <!-- CTA & Botão Hambúrguer Mobile -->
+      <div class="flex items-center gap-3 sm:gap-4">
         <a href="https://wa.me/5511945489950?text=Ol%C3%A1%21+Vim+pelo+site+da+777+Audiovisual+e+gostaria+de+solicitar+um+or%C3%A7amento+para+minha+empresa." 
            target="_blank" 
            rel="noopener noreferrer" 
-           class="inline-flex items-center justify-center bg-brand-red hover:bg-brand-red-hover text-brand-cream border border-brand-cream/30 text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 shadow-lg shadow-brand-red/30 hover:scale-105 active:scale-95 font-display tracking-wider">
+           class="inline-flex items-center justify-center bg-brand-red hover:bg-brand-red-hover text-brand-cream border border-brand-cream/30 text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2.5 rounded-full transition-all duration-200 shadow-lg shadow-brand-red/30 hover:scale-105 active:scale-95 font-display tracking-wider">
           <span>Orçamento WhatsApp</span>
         </a>
+
+        <!-- Botão Hambúrguer Mobile -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-brand-cream hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cream rounded-lg" aria-label="Abrir Menu de Navegação" aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
+    </div>
+
+    <!-- Menu Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 pt-3 pb-6 bg-black/95 backdrop-blur-xl border-b border-brand-cream/15 transition-all">
+      <nav class="flex flex-col gap-4 text-base font-medium text-brand-cream/90 font-display">
+        <a href="#servicos" class="mobile-nav-link hover:text-white transition-colors py-1">Serviços</a>
+        <a href="#sobre" class="mobile-nav-link hover:text-white transition-colors py-1">Sobre a 777</a>
+        <a href="#cases" class="mobile-nav-link hover:text-white transition-colors py-1">Cases de Sucesso</a>
+        <a href="#backstage" class="mobile-nav-link hover:text-white transition-colors py-1">Bastidores & Set</a>
+        <a href="#faq" class="mobile-nav-link hover:text-white transition-colors py-1">Dúvidas Frequentes</a>
+      </nav>
     </div>
   </header>
 
@@ -84,9 +102,13 @@
   <!-- 1. HERO SECTION                                                           -->
   <!-- ========================================================================= -->
   <section id="hero" class="relative min-h-[92vh] sm:min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-black">
-    <!-- Camada de Vídeo / GIF em Loop com Vinheta Bordô -->
-    <div class="absolute inset-0 z-0">
-      <img src="assets/img/hero_bg.gif" alt="Showreel 777 Audiovisual" class="w-full h-full object-cover opacity-35">
+    <!-- Camada de Vídeo de Alta Fidelidade Otimizado (WebM/MP4) com Vinheta Bordô -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <video autoplay muted loop playsinline poster="assets/img/hero_thumb.png" class="w-full h-full object-cover opacity-35" aria-hidden="true">
+        <source src="assets/img/hero_bg.webm" type="video/webm">
+        <source src="assets/img/hero_bg.mp4" type="video/mp4">
+        <img src="assets/img/hero_thumb.png" alt="Showreel 777 Audiovisual" class="w-full h-full object-cover opacity-35">
+      </video>
       <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/85"></div>
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-brand-red/15 rounded-full blur-[140px] pointer-events-none"></div>
     </div>
@@ -131,7 +153,7 @@
         <h3 class="text-xs sm:text-sm uppercase tracking-widest text-brand-cream font-bold mb-2 font-display">
           Empresas que confiam em nosso olhar
         </h3>
-        <p class="text-brand-cream/70 text-sm font-light">
+        <p class="text-brand-cream/85 text-sm font-light">
           Mais de 40 marcas e corporações já transformaram sua autoridade com as nossas produções.
         </p>
       </div>
@@ -140,26 +162,26 @@
       <div class="marquee-container py-4 my-6">
         <div class="marquee-track">
           <!-- Bloco 1 de Logos -->
-          <div class="marquee-item"><img src="assets/img/marcas/marca_4.png" alt="Logitech" class="max-h-9 w-auto object-contain"></div>
-          <div class="marquee-item"><img src="assets/img/marcas/marca_5.png" alt="TOTVS" class="max-h-9 w-auto object-contain"></div>
-          <div class="marquee-item"><img src="assets/img/marcas/marca_7.png" alt="Grupo Maringá" class="max-h-9 w-auto object-contain"></div>
-          <div class="marquee-item"><img src="assets/img/marcas/marca_2.png" alt="ITV Urbanismo" class="max-h-9 w-auto object-contain"></div>
-          <div class="marquee-item"><img src="assets/img/marcas/marca_3.png" alt="Brasil Cintra" class="max-h-9 w-auto object-contain"></div>
-          <div class="marquee-item"><img src="assets/img/marcas/marca_6.png" alt="RTM" class="max-h-9 w-auto object-contain"></div>
-          <div class="marquee-item"><img src="assets/img/marcas/marca_1.png" alt="Limão & Sal" class="max-h-9 w-auto object-contain"></div>
-          <div class="marquee-item"><img src="assets/img/marcas/marca_8.png" alt="Cliente 777" class="max-h-9 w-auto object-contain"></div>
-          <div class="marquee-item"><img src="assets/img/marcas/marca_9.png" alt="Cliente 777" class="max-h-9 w-auto object-contain"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_4.png" alt="Logitech" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_5.png" alt="TOTVS" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_7.png" alt="Grupo Maringá" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_2.png" alt="ITV Urbanismo" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_3.png" alt="Brasil Cintra" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_6.png" alt="RTM" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_1.png" alt="Limão & Sal" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_8.png" alt="Cliente 777" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_9.png" alt="Cliente 777" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
 
           <!-- Bloco 2 Duplicado para Loop Perfeito -->
-          <div class="marquee-item"><img src="assets/img/marcas/marca_4.png" alt="Logitech" class="max-h-9 w-auto object-contain"></div>
-          <div class="marquee-item"><img src="assets/img/marcas/marca_5.png" alt="TOTVS" class="max-h-9 w-auto object-contain"></div>
-          <div class="marquee-item"><img src="assets/img/marcas/marca_7.png" alt="Grupo Maringá" class="max-h-9 w-auto object-contain"></div>
-          <div class="marquee-item"><img src="assets/img/marcas/marca_2.png" alt="ITV Urbanismo" class="max-h-9 w-auto object-contain"></div>
-          <div class="marquee-item"><img src="assets/img/marcas/marca_3.png" alt="Brasil Cintra" class="max-h-9 w-auto object-contain"></div>
-          <div class="marquee-item"><img src="assets/img/marcas/marca_6.png" alt="RTM" class="max-h-9 w-auto object-contain"></div>
-          <div class="marquee-item"><img src="assets/img/marcas/marca_1.png" alt="Limão & Sal" class="max-h-9 w-auto object-contain"></div>
-          <div class="marquee-item"><img src="assets/img/marcas/marca_8.png" alt="Cliente 777" class="max-h-9 w-auto object-contain"></div>
-          <div class="marquee-item"><img src="assets/img/marcas/marca_9.png" alt="Cliente 777" class="max-h-9 w-auto object-contain"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_4.png" alt="Logitech" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_5.png" alt="TOTVS" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_7.png" alt="Grupo Maringá" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_2.png" alt="ITV Urbanismo" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_3.png" alt="Brasil Cintra" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_6.png" alt="RTM" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_1.png" alt="Limão & Sal" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_8.png" alt="Cliente 777" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
+          <div class="marquee-item"><img src="assets/img/marcas/marca_9.png" alt="Cliente 777" class="max-h-9 w-auto object-contain" loading="lazy" decoding="async"></div>
         </div>
       </div>
       
@@ -170,19 +192,19 @@
       <div class="grid grid-cols-2 gap-8 sm:gap-12 max-w-3xl mx-auto text-center">
         <div class="p-4 reveal-on-scroll">
           <span class="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-brand-cream tracking-tight block whitespace-nowrap">+700</span>
-          <p class="text-xs sm:text-sm text-brand-cream/70 mt-2 font-light">Vídeos e filmes entregues</p>
+          <p class="text-xs sm:text-sm text-brand-cream/85 mt-2 font-light">Vídeos e filmes entregues</p>
         </div>
         <div class="p-4 reveal-on-scroll delay-100">
           <span class="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-brand-cream tracking-tight block whitespace-nowrap">+40</span>
-          <p class="text-xs sm:text-sm text-brand-cream/70 mt-2 font-light">Grandes empresas atendidas</p>
+          <p class="text-xs sm:text-sm text-brand-cream/85 mt-2 font-light">Grandes empresas atendidas</p>
         </div>
         <div class="p-4 reveal-on-scroll delay-200">
           <span class="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-brand-cream tracking-tight block whitespace-nowrap">+5 Mi</span>
-          <p class="text-xs sm:text-sm text-brand-cream/70 mt-2 font-light">Pessoas alcançadas nas redes</p>
+          <p class="text-xs sm:text-sm text-brand-cream/85 mt-2 font-light">Pessoas alcançadas nas redes</p>
         </div>
         <div class="p-4 reveal-on-scroll delay-300">
           <span class="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-brand-cream tracking-tight block whitespace-nowrap">5 Anos</span>
-          <p class="text-xs sm:text-sm text-brand-cream/70 mt-2 font-light">De trajetória sólida em SP</p>
+          <p class="text-xs sm:text-sm text-brand-cream/85 mt-2 font-light">De trajetória sólida em SP</p>
         </div>
       </div>
     </div>
@@ -208,7 +230,7 @@
         <!-- Card 1: Drone (Destaque UVP) -->
         <div class="service-card group reveal-on-scroll">
           <div class="absolute inset-0 z-0">
-            <img src="assets/img/imobiliario_1.png" alt="Captação com Drone" class="service-bg-img w-full h-full object-cover opacity-20">
+            <img src="assets/img/imobiliario_1.webp" alt="Captação com Drone" class="service-bg-img w-full h-full object-cover opacity-20" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent"></div>
           </div>
           <div class="relative z-10">
@@ -232,7 +254,7 @@
         <!-- Card 2: Vídeo Corporativo -->
         <div class="service-card group reveal-on-scroll delay-100">
           <div class="absolute inset-0 z-0">
-            <img src="assets/img/institucional_1.png" alt="Vídeo Corporativo" class="service-bg-img w-full h-full object-cover opacity-20">
+            <img src="assets/img/institucional_1.png" alt="Vídeo Corporativo" class="service-bg-img w-full h-full object-cover opacity-20" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent"></div>
           </div>
           <div class="relative z-10">
@@ -256,7 +278,7 @@
         <!-- Card 3: Cobertura de Feiras B2B -->
         <div class="service-card group reveal-on-scroll delay-200">
           <div class="absolute inset-0 z-0">
-            <img src="assets/img/backstage/backstage_8.png" alt="Feiras e Eventos" class="service-bg-img w-full h-full object-cover opacity-20">
+            <img src="assets/img/backstage/backstage_8.png" alt="Feiras e Eventos" class="service-bg-img w-full h-full object-cover opacity-20" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent"></div>
           </div>
           <div class="relative z-10">
@@ -280,7 +302,7 @@
         <!-- Card 4: Fotografia & Still de Produto -->
         <div class="service-card group reveal-on-scroll">
           <div class="absolute inset-0 z-0">
-            <img src="assets/img/still_1.png" alt="Still de Produto" class="service-bg-img w-full h-full object-cover opacity-20">
+            <img src="assets/img/still_1.png" alt="Still de Produto" class="service-bg-img w-full h-full object-cover opacity-20" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent"></div>
           </div>
           <div class="relative z-10">
@@ -304,7 +326,7 @@
         <!-- Card 5: Motion Design & VFX -->
         <div class="service-card group reveal-on-scroll delay-100">
           <div class="absolute inset-0 z-0">
-            <img src="assets/img/automotivo_1.png" alt="Motion Design e VFX" class="service-bg-img w-full h-full object-cover opacity-20">
+            <img src="assets/img/automotivo_1.png" alt="Motion Design e VFX" class="service-bg-img w-full h-full object-cover opacity-20" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent"></div>
           </div>
           <div class="relative z-10">
@@ -328,7 +350,7 @@
         <!-- Card 6: Reels & Captação de Conteúdo -->
         <div class="service-card group reveal-on-scroll delay-200">
           <div class="absolute inset-0 z-0">
-            <img src="assets/img/backstage/backstage_4.png" alt="Formatos Verticais" class="service-bg-img w-full h-full object-cover opacity-20">
+            <img src="assets/img/backstage/backstage_4.png" alt="Formatos Verticais" class="service-bg-img w-full h-full object-cover opacity-20" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-transparent"></div>
           </div>
           <div class="relative z-10">
@@ -373,7 +395,7 @@
         <!-- Coluna da Esquerda: FOTO DE EQUIPAMENTO PROFISSIONAL (Substituindo o volante da BMW) -->
         <div class="lg:col-span-5 reveal-on-scroll">
           <div class="sobre-photo-container aspect-[4/5] sm:aspect-[3/4] relative">
-            <img src="assets/img/equipamento_camera.jpg" alt="Equipamentos de Cinema e Câmeras da 777 Audiovisual" class="w-full h-full object-cover">
+            <img src="assets/img/equipamento_camera.jpg" alt="Equipamentos de Cinema e Câmeras da 777 Audiovisual" class="w-full h-full object-cover" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/20"></div>
             
             <!-- Floating Badge de Autoridade -->
@@ -384,7 +406,7 @@
               </div>
               <div class="text-right">
                 <span class="text-xs uppercase tracking-wider text-brand-cream font-black block font-display">+700 VÍDEOS</span>
-                <span class="text-xs text-brand-cream/75">Entrega de precisão</span>
+                <span class="text-xs text-brand-cream/85">Entrega de precisão</span>
               </div>
             </div>
           </div>
@@ -447,18 +469,18 @@
             Resultados reais para empresas que confiam em nosso olhar.
           </h2>
         </div>
-        <p class="text-brand-cream/70 text-sm mt-4 md:mt-0 max-w-xs font-light">
+        <p class="text-brand-cream/85 text-sm mt-4 md:mt-0 max-w-xs font-light">
           Clique em qualquer projeto para abrir a ficha técnica com desafio e métricas alcançadas.
         </p>
       </div>
       
-      <!-- Grid 2x2 de Cases -->
+      <!-- Grid 2x2 de Cases (Acessível via Teclado e Screen Readers) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
         <!-- Case 1: Automotivo -->
-        <article class="case-card group cursor-pointer relative rounded-2xl overflow-hidden reveal-on-scroll" data-case="automotivo">
+        <article class="case-card group cursor-pointer relative rounded-2xl overflow-hidden reveal-on-scroll focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cream" data-case="automotivo" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha técnica do Case Automotivo">
           <div class="aspect-video w-full relative overflow-hidden">
-            <img src="assets/img/automotivo_1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Case Automotivo">
+            <img src="assets/img/automotivo_1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Case Automotivo" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
             <div class="absolute inset-0 flex items-center justify-center">
               <span class="play-btn-pulse">▶</span>
@@ -468,15 +490,15 @@
               <h3 class="text-xl sm:text-2xl font-bold text-white mt-1 group-hover:text-brand-cream transition-colors font-display">
                 Captação de Alta Velocidade & Campanha de Performance
               </h3>
-              <p class="text-xs sm:text-sm text-brand-cream/80 mt-1 font-light">+850 mil visualizações combinadas</p>
+              <p class="text-xs sm:text-sm text-brand-cream/85 mt-1 font-light">+850 mil visualizações combinadas</p>
             </div>
           </div>
         </article>
 
         <!-- Case 2: Corporativo -->
-        <article class="case-card group cursor-pointer relative rounded-2xl overflow-hidden reveal-on-scroll delay-100" data-case="corporativo">
+        <article class="case-card group cursor-pointer relative rounded-2xl overflow-hidden reveal-on-scroll delay-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cream" data-case="corporativo" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha técnica do Case Corporativo e Industrial">
           <div class="aspect-video w-full relative overflow-hidden">
-            <img src="assets/img/institucional_1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Case Corporativo">
+            <img src="assets/img/institucional_1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Case Corporativo" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
             <div class="absolute inset-0 flex items-center justify-center">
               <span class="play-btn-pulse">▶</span>
@@ -486,15 +508,15 @@
               <h3 class="text-xl sm:text-2xl font-bold text-white mt-1 group-hover:text-brand-cream transition-colors font-display">
                 Apresentação Institucional de Fábrica & Infraestrutura
               </h3>
-              <p class="text-xs sm:text-sm text-brand-cream/80 mt-1 font-light">Filme comercial oficial para clientes B2B</p>
+              <p class="text-xs sm:text-sm text-brand-cream/85 mt-1 font-light">Filme comercial oficial para clientes B2B</p>
             </div>
           </div>
         </article>
 
         <!-- Case 3: Imobiliário -->
-        <article class="case-card group cursor-pointer relative rounded-2xl overflow-hidden reveal-on-scroll" data-case="imobiliario">
+        <article class="case-card group cursor-pointer relative rounded-2xl overflow-hidden reveal-on-scroll focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cream" data-case="imobiliario" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha técnica do Case Imobiliário">
           <div class="aspect-video w-full relative overflow-hidden">
-            <img src="assets/img/imobiliario_1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Case Imobiliário">
+            <img src="assets/img/imobiliario_1.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Case Imobiliário" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
             <div class="absolute inset-0 flex items-center justify-center">
               <span class="play-btn-pulse">▶</span>
@@ -504,15 +526,15 @@
               <h3 class="text-xl sm:text-2xl font-bold text-white mt-1 group-hover:text-brand-cream transition-colors font-display">
                 Valorização Territorial & Venda de Empreendimentos
               </h3>
-              <p class="text-xs sm:text-sm text-brand-cream/80 mt-1 font-light">100% das cotas iniciais comercializadas</p>
+              <p class="text-xs sm:text-sm text-brand-cream/85 mt-1 font-light">100% das cotas iniciais comercializadas</p>
             </div>
           </div>
         </article>
 
         <!-- Case 4: Still de Produto -->
-        <article class="case-card group cursor-pointer relative rounded-2xl overflow-hidden reveal-on-scroll delay-100" data-case="produto">
+        <article class="case-card group cursor-pointer relative rounded-2xl overflow-hidden reveal-on-scroll delay-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cream" data-case="produto" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Ver ficha técnica do Case Still de Produto">
           <div class="aspect-video w-full relative overflow-hidden">
-            <img src="assets/img/still_1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Case Still de Produto">
+            <img src="assets/img/still_1.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Case Still de Produto" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
             <div class="absolute inset-0 flex items-center justify-center">
               <span class="play-btn-pulse">▶</span>
@@ -522,7 +544,7 @@
               <h3 class="text-xl sm:text-2xl font-bold text-white mt-1 group-hover:text-brand-cream transition-colors font-display">
                 Criação de Desejo Visual & Valor Percebido em Catálogo
               </h3>
-              <p class="text-xs sm:text-sm text-brand-cream/80 mt-1 font-light">Redução de 34% no CPA em campanhas</p>
+              <p class="text-xs sm:text-sm text-brand-cream/85 mt-1 font-light">Redução de 34% no CPA em campanhas</p>
             </div>
           </div>
         </article>
@@ -549,10 +571,10 @@
       
       <!-- Controles Desktop -->
       <div class="hidden md:flex items-center gap-3 mt-6 md:mt-0">
-        <button id="carousel-prev" class="w-12 h-12 rounded-full border border-brand-cream/30 flex items-center justify-center text-brand-cream hover:bg-brand-red active:scale-95 transition-all" aria-label="Anterior">
+        <button id="carousel-prev" class="w-12 h-12 rounded-full border border-brand-cream/30 flex items-center justify-center text-brand-cream hover:bg-brand-red active:scale-95 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cream" aria-label="Ver foto anterior dos bastidores">
           ←
         </button>
-        <button id="carousel-next" class="w-12 h-12 rounded-full border border-brand-cream/30 flex items-center justify-center text-brand-cream hover:bg-brand-red active:scale-95 transition-all" aria-label="Próximo">
+        <button id="carousel-next" class="w-12 h-12 rounded-full border border-brand-cream/30 flex items-center justify-center text-brand-cream hover:bg-brand-red active:scale-95 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cream" aria-label="Ver próxima foto dos bastidores">
           →
         </button>
       </div>
@@ -564,66 +586,66 @@
       <!-- Card 1: Drone -->
       <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-brand-card border border-brand-cream/15">
         <div class="aspect-[4/3] overflow-hidden bg-black">
-          <img src="assets/img/equipamento_drone.jpg" class="w-full h-full object-cover" alt="Drone em Set">
+          <img src="assets/img/equipamento_drone.jpg" class="w-full h-full object-cover" alt="Drone em Set" loading="lazy" decoding="async">
         </div>
         <div class="p-5">
           <h4 class="font-display font-bold text-brand-cream text-base">Operação Aérea Homologada</h4>
-          <p class="text-xs text-brand-cream/70 mt-1 font-light">Drones de última geração com transmissão em tempo real para monitor de direção em solo.</p>
+          <p class="text-xs text-brand-cream/85 mt-1 font-light">Drones de última geração com transmissão em tempo real para monitor de direção em solo.</p>
         </div>
       </div>
 
       <!-- Card 2: Câmera Sony e Lentes (Substituindo o volante da BMW no carrossel) -->
       <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-brand-card border border-brand-cream/15">
         <div class="aspect-[4/3] overflow-hidden bg-black">
-          <img src="assets/img/equipamento_camera.jpg" class="w-full h-full object-cover" alt="Cinema Line e Lentes Prime">
+          <img src="assets/img/equipamento_camera.jpg" class="w-full h-full object-cover" alt="Cinema Line e Lentes Prime" loading="lazy" decoding="async">
         </div>
         <div class="p-5">
           <h4 class="font-display font-bold text-brand-cream text-base">Cinema Line & Lentes Prime</h4>
-          <p class="text-xs text-brand-cream/70 mt-1 font-light">Sensores de alta fidelidade e lentes com abertura máxima para foco cinematográfico e profundidade.</p>
+          <p class="text-xs text-brand-cream/85 mt-1 font-light">Sensores de alta fidelidade e lentes com abertura máxima para foco cinematográfico e profundidade.</p>
         </div>
       </div>
 
       <!-- Card 3: Locações Reais -->
       <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-brand-card border border-brand-cream/15">
         <div class="aspect-[4/3] overflow-hidden bg-black">
-          <img src="assets/img/backstage/backstage_2.png" class="w-full h-full object-cover" alt="Direção Executiva">
+          <img src="assets/img/backstage/backstage_2.png" class="w-full h-full object-cover" alt="Direção Executiva" loading="lazy" decoding="async">
         </div>
         <div class="p-5">
           <h4 class="font-display font-bold text-brand-cream text-base">Direção Executiva Amigável</h4>
-          <p class="text-xs text-brand-cream/70 mt-1 font-light">Ajudamos diretores e colaboradores que não têm costume de falar para a câmera a soarem naturais.</p>
+          <p class="text-xs text-brand-cream/85 mt-1 font-light">Ajudamos diretores e colaboradores que não têm costume de falar para a câmera a soarem naturais.</p>
         </div>
       </div>
 
       <!-- Card 4: Feiras e Galpões -->
       <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-brand-card border border-brand-cream/15">
         <div class="aspect-[4/3] overflow-hidden bg-black">
-          <img src="assets/img/backstage/backstage_4.png" class="w-full h-full object-cover" alt="Feiras em SP">
+          <img src="assets/img/backstage/backstage_4.png" class="w-full h-full object-cover" alt="Feiras em SP" loading="lazy" decoding="async">
         </div>
         <div class="p-5">
           <h4 class="font-display font-bold text-brand-cream text-base">Presença em Feiras & Galpões em SP</h4>
-          <p class="text-xs text-brand-cream/70 mt-1 font-light">Estrutura ágil e portátil com baterias e backups instantâneos para filmar sem travar sua operação.</p>
+          <p class="text-xs text-brand-cream/85 mt-1 font-light">Estrutura ágil e portátil com baterias e backups instantâneos para filmar sem travar sua operação.</p>
         </div>
       </div>
 
       <!-- Card 5: Iluminação de Set -->
       <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-brand-card border border-brand-cream/15">
         <div class="aspect-[4/3] overflow-hidden bg-black">
-          <img src="assets/img/backstage/backstage_5.png" class="w-full h-full object-cover" alt="Câmeras e Iluminação">
+          <img src="assets/img/backstage/backstage_5.png" class="w-full h-full object-cover" alt="Câmeras e Iluminação" loading="lazy" decoding="async">
         </div>
         <div class="p-5">
           <h4 class="font-display font-bold text-brand-cream text-base">Iluminação Profissional de Set</h4>
-          <p class="text-xs text-brand-cream/70 mt-1 font-light">Controle de luz preciso para estúdios, fábricas e ambientes com iluminação desafiadora.</p>
+          <p class="text-xs text-brand-cream/85 mt-1 font-light">Controle de luz preciso para estúdios, fábricas e ambientes com iluminação desafiadora.</p>
         </div>
       </div>
 
       <!-- Card 6: Timeline de Pós-Produção -->
       <div class="snap-center shrink-0 w-[280px] sm:w-[360px] rounded-2xl overflow-hidden bg-brand-card border border-brand-cream/15">
         <div class="aspect-[4/3] overflow-hidden bg-black">
-          <img src="assets/img/pos_producao.jpg" class="w-full h-full object-cover" alt="Tratamento e Montagem">
+          <img src="assets/img/pos_producao.jpg" class="w-full h-full object-cover" alt="Tratamento e Montagem" loading="lazy" decoding="async">
         </div>
         <div class="p-5">
           <h4 class="font-display font-bold text-brand-cream text-base">Pós-Produção & Color Grading</h4>
-          <p class="text-xs text-brand-cream/70 mt-1 font-light">Edição dinâmica, sound design e calibração de cor de padrão cinematográfico para valorizar sua marca.</p>
+          <p class="text-xs text-brand-cream/85 mt-1 font-light">Edição dinâmica, sound design e calibração de cor de padrão cinematográfico para valorizar sua marca.</p>
         </div>
       </div>
 
@@ -792,16 +814,16 @@
   </footer>
 
   <!-- ========================================================================= -->
-  <!-- DRAWER / SHEET INTERATIVO DE CASES                                        -->
+  <!-- DRAWER / SHEET INTERATIVO DE CASES (Acessível com Focus Trap)             -->
   <!-- ========================================================================= -->
-  <div id="case-drawer-backdrop" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none flex justify-end">
+  <div id="case-drawer-backdrop" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none flex justify-end" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
     <div id="case-drawer-panel" class="w-full max-w-xl p-6 sm:p-8 overflow-y-auto translate-x-full shadow-2xl flex flex-col justify-between">
       
       <!-- Topo Drawer -->
       <div>
         <div class="flex items-center justify-between pb-6 border-b border-brand-cream/15">
           <span id="drawer-badge" class="pill-badge text-xs">NICHO</span>
-          <button id="drawer-close" class="text-brand-cream/70 hover:text-brand-cream text-sm font-semibold p-2 transition-colors flex items-center gap-1.5 font-display" aria-label="Fechar Gaveta">
+          <button id="drawer-close" class="text-brand-cream/85 hover:text-brand-cream text-sm font-semibold p-2 transition-colors flex items-center gap-1.5 font-display focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cream rounded-lg" aria-label="Fechar ficha técnica do case">
             <span class="text-lg">✕</span> Fechar
           </button>
         </div>

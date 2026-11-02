@@ -211,8 +211,19 @@ body {
   text-decoration: none;
   transition: all 0.25s var(--ease-spring);
   align-self: flex-start;
+  position: relative;
+  z-index: 25;
 }
 
+/* Stretched Link: expande a área clicável para o card inteiro */
+.btn-saber-mais::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.service-card:hover .btn-saber-mais,
 .btn-saber-mais:hover {
   background: var(--color-brand-red);
   border-color: var(--color-brand-cream);
@@ -293,12 +304,19 @@ body {
   padding: 2rem;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .service-card:hover {
   transform: translateY(-6px);
   border-color: rgba(214, 199, 171, 0.45);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(133, 0, 13, 0.3);
+}
+
+.case-card:focus-visible,
+.service-card:focus-within {
+  outline: 2px solid var(--color-brand-cream);
+  outline-offset: 4px;
 }
 
 .service-card:hover .service-bg-img {

@@ -1,10 +1,11 @@
 /**
- * 777 Audiovisual — Main JavaScript (Apex Squad)
- * Vanilla JS, Zero heavy dependencies, 60fps spring interactions
+ * 777 Audiovisual — Main JavaScript (Apex Squad Ultra-Premium)
+ * Vanilla JS, Zero heavy dependencies, 60fps spring interactions, WCAG AA compliant
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
+  initMobileMenu();
   initCaseDrawer();
   initBackstageCarousel();
   initScrollAnimations();
@@ -17,11 +18,11 @@ function initHeaderScroll() {
 
   const handleScroll = () => {
     if (window.scrollY > 40) {
-      header.classList.add('bg-black/90', 'shadow-2xl', 'backdrop-blur-md');
-      header.classList.remove('bg-black/40');
+      header.classList.add('bg-black/95', 'shadow-2xl', 'backdrop-blur-md');
+      header.classList.remove('bg-black/60');
     } else {
-      header.classList.remove('bg-black/90', 'shadow-2xl');
-      header.classList.add('bg-black/40');
+      header.classList.remove('bg-black/95', 'shadow-2xl');
+      header.classList.add('bg-black/60');
     }
   };
 
@@ -29,7 +30,34 @@ function initHeaderScroll() {
   handleScroll();
 }
 
-// 2. Animações de Entrada na Rolagem (Scroll Reveal)
+// 2. Menu Mobile Drawer / Toggle
+function initMobileMenu() {
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+  if (!menuBtn || !mobileMenu) return;
+
+  const toggleMenu = (open) => {
+    const isExpanded = open !== undefined ? open : menuBtn.getAttribute('aria-expanded') === 'true';
+    const nextState = !isExpanded;
+
+    menuBtn.setAttribute('aria-expanded', String(nextState));
+    if (nextState) {
+      mobileMenu.classList.remove('hidden');
+    } else {
+      mobileMenu.classList.add('hidden');
+    }
+  };
+
+  menuBtn.addEventListener('click', () => toggleMenu());
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => toggleMenu(true)); // fecha ao clicar em link
+  });
+}
+
+// 3. Animações de Entrada na Rolagem (Scroll Reveal)
 function initScrollAnimations() {
   const revealElements = document.querySelectorAll('.reveal-on-scroll');
   if (!revealElements.length) return;
@@ -38,18 +66,18 @@ function initScrollAnimations() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-revealed');
-        obs.unobserve(entry.target); // anima uma única vez
+        obs.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.15,
+    threshold: 0.12,
     rootMargin: '0px 0px -40px 0px'
   });
 
   revealElements.forEach(el => observer.observe(el));
 }
 
-// 3. Base de Dados dos Cases & Drawer Interativo
+// 4. Base de Dados dos Cases & Drawer Interativo com A11y
 const casesData = {
   automotivo: {
     badge: 'AUTOMOTIVO',
@@ -72,7 +100,7 @@ const casesData = {
   imobiliario: {
     badge: 'IMOBILIÁRIO & EMPREENDIMENTOS',
     title: 'Valorização Territorial & Venda de Empreendimentos',
-    image: 'assets/img/imobiliario_1.png',
+    image: 'assets/img/imobiliario_1.webp',
     desafio: 'Comercializar lotes e unidades de alto padrão enquanto o empreendimento ainda estava em fase inicial de terraplanagem e infraestrutura.',
     solucao: 'Captação aérea em Golden Hour destacando a topografia, acesso viário, áreas verdes e vista panorâmica, combinada com still fotográfico dos decorados.',
     resultado: '100% das cotas iniciais comercializadas no trimestre de lançamento com campanhas de tráfego pago baseadas no vídeo produzido.',
@@ -91,6 +119,7 @@ const casesData = {
 
 function initCaseDrawer() {
   const backdrop = document.getElementById('case-drawer-backdrop');
+  const panel = document.getElementById('case-drawer-panel');
   const closeBtn = document.getElementById('drawer-close');
   const caseCards = document.querySelectorAll('.case-card');
 
@@ -104,9 +133,13 @@ function initCaseDrawer() {
 
   if (!backdrop || !closeBtn) return;
 
-  function openDrawer(caseKey) {
+  let lastActiveElement = null;
+
+  function openDrawer(caseKey, triggeringElement) {
     const data = casesData[caseKey];
     if (!data) return;
+
+    lastActiveElement = triggeringElement || document.activeElement;
 
     drawerBadge.textContent = data.badge;
     drawerTitle.textContent = data.title;
@@ -119,18 +152,39 @@ function initCaseDrawer() {
     drawerCta.href = `https://wa.me/5511945489950?text=${encodeURIComponent(data.whatsappMessage)}`;
 
     backdrop.classList.add('active');
-    document.body.style.overflow = 'hidden'; // trava scroll de fundo
+    backdrop.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    // Foca no botão fechar para A11y
+    setTimeout(() => {
+      closeBtn.focus();
+    }, 100);
   }
 
   function closeDrawer() {
     backdrop.classList.remove('active');
+    backdrop.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+
+    // Restaura foco para o card que abriu a gaveta
+    if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+      lastActiveElement.focus();
+    }
   }
 
   caseCards.forEach(card => {
+    const caseKey = card.getAttribute('data-case');
+
     card.addEventListener('click', () => {
-      const caseKey = card.getAttribute('data-case');
-      openDrawer(caseKey);
+      openDrawer(caseKey, card);
+    });
+
+    // Acessibilidade por Teclado (Enter / Espaço)
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openDrawer(caseKey, card);
+      }
     });
   });
 
@@ -142,14 +196,36 @@ function initCaseDrawer() {
     }
   });
 
+  // Focus trap & Escape listener
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && backdrop.classList.contains('active')) {
+    if (!backdrop.classList.contains('active')) return;
+
+    if (e.key === 'Escape') {
       closeDrawer();
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      const focusableElements = panel.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      const firstEl = focusableElements[0];
+      const lastEl = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstEl) {
+          lastEl.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastEl) {
+          firstEl.focus();
+          e.preventDefault();
+        }
+      }
     }
   });
 }
 
-// 4. Carrossel de Backstage (Controles de Navegação)
+// 5. Carrossel de Backstage (Passo Dinâmico Responsivo)
 function initBackstageCarousel() {
   const carousel = document.getElementById('backstage-carousel');
   const prevBtn = document.getElementById('carousel-prev');
@@ -157,13 +233,16 @@ function initBackstageCarousel() {
 
   if (!carousel || !prevBtn || !nextBtn) return;
 
-  const scrollAmount = 380;
+  const getScrollAmount = () => {
+    const firstCard = carousel.querySelector('.snap-center');
+    return firstCard ? firstCard.offsetWidth + 24 : 360;
+  };
 
   prevBtn.addEventListener('click', () => {
-    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
   });
 
   nextBtn.addEventListener('click', () => {
-    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
   });
 }
